@@ -5,6 +5,14 @@
       <map>
         <entry key="..\:/xycheok/Documents/GitHub/MadChef/app/src/main/res/drawable/box.xml" value="0.1925" />
         <entry key="..\:/xycheok/Documents/GitHub/MadChef/app/src/main/res/drawable/generalsmoke.xml" value="0.173" />
+        <entry key="..\:/xycheok/Documents/GitHub/MadChef/app/src/main/res/drawable/greybox.xml" value="0.1925" />
+        <entry key="..\:/xycheok/Documents/GitHub/MadChef/app/src/main/res/drawable/radiusbox.xml" value="0.1" />
+        <entry key="..\:/xycheok/Documents/GitHub/MadChef/app/src/main/res/drawable/whitebox.xml" value="0.1925" />
+        <entry key="..\:/xycheok/Documents/GitHub/MadChef/app/src/main/res/font/roboto.xml" value="0.28020833333333334" />
+        <entry key="..\:/xycheok/Documents/GitHub/MadChef/app/src/main/res/layout/activity_edit_profile.xml" value="0.176" />
+        <entry key="..\:/xycheok/Documents/GitHub/MadChef/app/src/main/res/layout/activity_login.xml" value="0.264" />
+        <entry key="..\:/xycheok/Documents/GitHub/MadChef/app/src/main/res/layout/activity_logout.xml" value="0.264" />
+        <entry key="..\:/xycheok/Documents/GitHub/MadChef/app/src/main/res/layout/activity_profile.xml" value="0.2" />
         <entry key="..\:/xycheok/Documents/GitHub/MadChef/app/src/main/res/layout/activity_sign_up.xml" value="0.264" />
       </map>
     </option>
@@ -14,5 +22,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.264" />
+      </ProjectState>
+    </option>
   </component>
 </project>

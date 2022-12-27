@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E6E6FA">
+
+    <TextView
+        android:id="@+id/showEmail"
+        android:layout_width="696dp"
+        android:layout_height="128dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="72dp"
+        android:text="syafiq@gmail.com"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/showPhoneNum" />
+
+    <TextView
+        android:id="@+id/showPhoneNum"
+        android:layout_width="696dp"
+        android:layout_height="128dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="72dp"
+        android:text="Optional"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/showBD" />
+
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="966dp"
+        android:layout_height="500dp"
+        android:layout_marginTop="92dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/purplebox" />
+
+    <ImageView
+        android:id="@+id/imageView18"
+        android:layout_width="966dp"
+        android:layout_height="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView17"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/whitebox" />
+
+    <ImageView
+        android:id="@+id/imageView17"
+        android:layout_width="966dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="52dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/greybox" />
+
+    <ImageView
+        android:id="@+id/imageView19"
+        android:layout_width="966dp"
+        android:layout_height="39dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView16"
+        app:srcCompat="@drawable/greybox" />
+
+    <ImageView
+        android:id="@+id/imageView20"
+        android:layout_width="966dp"
+        android:layout_height="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView19"
+        app:srcCompat="@drawable/whitebox" />
+
+    <ImageView
+        android:id="@+id/imageView21"
+        android:layout_width="962dp"
+        android:layout_height="479dp"
+        android:layout_marginTop="112dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/profile_pic" />
+
+    <ImageView
+        android:id="@+id/imageView23"
+        android:layout_width="65dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView16"
+        app:srcCompat="@drawable/image_2" />
+
+    <TextView
+        android:id="@+id/showName"
+        android:layout_width="696dp"
+        android:layout_height="128dp"
+        android:layout_marginTop="88dp"
+        android:layout_marginEnd="72dp"
+        android:text="Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView20" />
+
+    <TextView
+        android:id="@+id/showBD"
+        android:layout_width="696dp"
+        android:layout_height="128dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="72dp"
+        android:text="19/2/1990"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/showName" />
+
+    <ImageView
+        android:id="@+id/imageView24"
+        android:layout_width="149dp"
+        android:layout_height="139dp"
+        android:layout_marginTop="100dp"
+        app:layout_constraintEnd_toStartOf="@+id/showName"
+        app:layout_constraintTop_toBottomOf="@+id/imageView19"
+        app:srcCompat="@drawable/illustration_car_wash_flyer__27__1" />
+
+    <ImageView
+        android:id="@+id/imageView27"
+        android:layout_width="149dp"
+        android:layout_height="139dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintEnd_toStartOf="@+id/showBD"
+        app:layout_constraintTop_toBottomOf="@+id/showName"
+        app:srcCompat="@drawable/calendar" />
+
+    <ImageView
+        android:id="@+id/imageView28"
+        android:layout_width="149dp"
+        android:layout_height="139dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintEnd_toStartOf="@+id/showPhoneNum"
+        app:layout_constraintTop_toBottomOf="@+id/showBD"
+        app:srcCompat="@drawable/phone" />
+
+    <ImageView
+        android:id="@+id/imageView29"
+        android:layout_width="149dp"
+        android:layout_height="139dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintEnd_toStartOf="@+id/showEmail"
+        app:layout_constraintTop_toBottomOf="@+id/showPhoneNum"
+        app:srcCompat="@drawable/mail" />
+
+    <Button
+        android:id="@+id/saveBtn"
+        android:layout_width="291dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="320dp"
+        android:backgroundTint="#9999E4"
+        android:text="edit profile"
+        android:textSize="34sp"
+        app:cornerRadius="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/showEmail" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
