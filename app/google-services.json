@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "398866158520",
+    "project_id": "madchef-75884",
+    "storage_bucket": "madchef-75884.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:398866158520:android:e16fec3e7007091791f54d",
+        "android_client_info": {
+          "package_name": "com.example.madchef"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "398866158520-09lajpb461qk9muj81gk1gtg676euth8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.madchef",
+            "certificate_hash": "1adca6daeec5ddd8b81f75b17aaf8cda84d0b117"
+          }
+        },
+        {
+          "client_id": "398866158520-spngekvfhesm6u1cc30equ16hudt2jov.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbrs0AD_YOeb0m8tiUcYwcueKR-5Mijx8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "398866158520-spngekvfhesm6u1cc30equ16hudt2jov.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
