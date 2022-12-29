@@ -8,7 +8,7 @@
     tools:context=".CookingBook">
 
     <Button
-        android:id="@+id/acc_name7"
+        android:id="@+id/CB_acc_name2"
         style="?attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
@@ -22,10 +22,10 @@
         android:textAllCaps="false"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button6" />
+        app:layout_constraintTop_toBottomOf="@+id/CB_fav" />
 
     <Button
-        android:id="@+id/acc_name9"
+        android:id="@+id/CB_post1"
         style="?attr/borderlessButtonStyle"
         android:layout_width="155dp"
         android:layout_height="160dp"
@@ -41,10 +41,10 @@
         android:textColor="@color/black"
         app:iconPadding="-6dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/acc_name8" />
+        app:layout_constraintTop_toBottomOf="@+id/CB_acc_name1" />
 
     <Button
-        android:id="@+id/acc_name10"
+        android:id="@+id/CB_post2"
         style="?attr/borderlessButtonStyle"
         android:layout_width="155dp"
         android:layout_height="160dp"
@@ -60,10 +60,10 @@
         android:textColor="@color/black"
         app:iconPadding="-6dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/acc_name7" />
+        app:layout_constraintTop_toBottomOf="@+id/CB_acc_name2" />
 
     <Button
-        android:id="@+id/acc_name8"
+        android:id="@+id/CB_acc_name1"
         style="?attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
@@ -77,10 +77,10 @@
         android:textAllCaps="false"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button6" />
+        app:layout_constraintTop_toBottomOf="@+id/CB_fav" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/CB_food"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
@@ -90,10 +90,10 @@
         android:textColor="@color/black"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/CB_cuis" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/CB_cuis"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="41dp"
@@ -103,10 +103,10 @@
         android:textColor="@color/black"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+        app:layout_constraintTop_toBottomOf="@+id/CB_allrg" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/CB_diet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
@@ -116,10 +116,10 @@
         android:textColor="@color/black"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button5" />
+        app:layout_constraintTop_toBottomOf="@+id/CB_pref" />
 
     <TextView
-        android:id="@+id/diet_text2"
+        android:id="@+id/CB_diet_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
@@ -130,11 +130,11 @@
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@+id/textView7"
-        app:layout_constraintTop_toBottomOf="@+id/button5" />
+        app:layout_constraintStart_toEndOf="@+id/CB_diet"
+        app:layout_constraintTop_toBottomOf="@+id/CB_pref" />
 
     <TextView
-        android:id="@+id/allerg_text2"
+        android:id="@+id/CB_food_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
@@ -144,11 +144,11 @@
         android:text="Chicken"
         android:textColor="@color/black"
         android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/cuisine_text10" />
+        app:layout_constraintStart_toEndOf="@+id/CB_food"
+        app:layout_constraintTop_toBottomOf="@+id/CB_cuis_1" />
 
     <TextView
-        android:id="@+id/cuisine_text6"
+        android:id="@+id/CB_cuis_3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
@@ -158,11 +158,11 @@
         android:text="Japanese"
         android:textColor="@color/black"
         android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@+id/cuisine_text9"
-        app:layout_constraintTop_toBottomOf="@+id/food_text2" />
+        app:layout_constraintStart_toEndOf="@+id/CB_cuis_2"
+        app:layout_constraintTop_toBottomOf="@+id/CB_allrg_1" />
 
     <TextView
-        android:id="@+id/cuisine_text7"
+        android:id="@+id/CB_food_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
@@ -172,11 +172,11 @@
         android:text="Rice"
         android:textColor="@color/black"
         android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@+id/allerg_text2"
-        app:layout_constraintTop_toBottomOf="@+id/cuisine_text10" />
+        app:layout_constraintStart_toEndOf="@+id/CB_food_1"
+        app:layout_constraintTop_toBottomOf="@+id/CB_cuis_1" />
 
     <TextView
-        android:id="@+id/cuisine_text8"
+        android:id="@+id/CB_food_3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
@@ -186,11 +186,11 @@
         android:text="Burger"
         android:textColor="@color/black"
         android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@+id/cuisine_text7"
-        app:layout_constraintTop_toBottomOf="@+id/cuisine_text10" />
+        app:layout_constraintStart_toEndOf="@+id/CB_food_2"
+        app:layout_constraintTop_toBottomOf="@+id/CB_cuis_1" />
 
     <TextView
-        android:id="@+id/cuisine_text9"
+        android:id="@+id/CB_cuis_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
@@ -200,11 +200,11 @@
         android:text="Malaysian"
         android:textColor="@color/black"
         android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@+id/cuisine_text10"
-        app:layout_constraintTop_toBottomOf="@+id/food_text2" />
+        app:layout_constraintStart_toEndOf="@+id/CB_cuis_1"
+        app:layout_constraintTop_toBottomOf="@+id/CB_allrg_1" />
 
     <TextView
-        android:id="@+id/cuisine_text10"
+        android:id="@+id/CB_cuis_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
@@ -214,11 +214,11 @@
         android:text="Korean"
         android:textColor="@color/black"
         android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/food_text2" />
+        app:layout_constraintStart_toEndOf="@+id/CB_cuis"
+        app:layout_constraintTop_toBottomOf="@+id/CB_allrg_1" />
 
     <TextView
-        android:id="@+id/food_text2"
+        android:id="@+id/CB_allrg_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="22dp"
@@ -228,11 +228,11 @@
         android:text="Peanut"
         android:textColor="@color/black"
         android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@+id/textView8"
-        app:layout_constraintTop_toBottomOf="@+id/diet_text2" />
+        app:layout_constraintStart_toEndOf="@+id/CB_allrg"
+        app:layout_constraintTop_toBottomOf="@+id/CB_diet_1" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/CB_allrg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
@@ -242,10 +242,10 @@
         android:textColor="@color/black"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        app:layout_constraintTop_toBottomOf="@+id/CB_diet" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/CB_fav_more"
         style="?attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -261,7 +261,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/CB_pref_edit"
         style="?attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -277,7 +277,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/CB_pref"
         style="?attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -293,7 +293,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/CB_fav"
         style="?attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -306,5 +306,5 @@
         android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/CB_food" />
 </androidx.constraintlayout.widget.ConstraintLayout>

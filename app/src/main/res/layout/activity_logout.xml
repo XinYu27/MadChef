@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/CB_diet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="328dp"
@@ -19,16 +19,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView13"
-        android:layout_width="411dp"
-        android:layout_height="326dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="36dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/illustration_car_wash_flyer__28__2" />
-
-    <ImageView
         android:id="@+id/imageView14"
         android:layout_width="95dp"
         android:layout_height="96dp"
@@ -37,15 +27,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/icons8_logout_58_1" />
-
-    <ImageView
-        android:id="@+id/imageView15"
-        android:layout_width="411dp"
-        android:layout_height="326dp"
-        android:rotation="110"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/illustration_car_wash_flyer__28__2" />
 
     <TextView
         android:id="@+id/textView6"
@@ -71,7 +52,7 @@
         android:text="Naah, Just kidding"
         android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        app:layout_constraintTop_toBottomOf="@+id/CB_diet" />
 
     <Button
         android:id="@+id/logoutBtn"

@@ -8,7 +8,7 @@
     tools:context=".CB_Favourite">
 
     <Button
-        android:id="@+id/acc_name3"
+        android:id="@+id/fav_acc_name1"
         style="?attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
@@ -25,7 +25,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/acc_name5"
+        android:id="@+id/fav_acc_name3"
         style="?attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
@@ -39,10 +39,10 @@
         android:textAllCaps="false"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/acc_name" />
+        app:layout_constraintTop_toBottomOf="@+id/fav_post1" />
 
     <Button
-        android:id="@+id/acc_name13"
+        android:id="@+id/fav_acc_name5"
         style="?attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
@@ -56,10 +56,10 @@
         android:textAllCaps="false"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/acc_name6" />
+        app:layout_constraintTop_toBottomOf="@+id/fav_post3" />
 
     <Button
-        android:id="@+id/acc_name15"
+        android:id="@+id/fav_acc_name6"
         style="?attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
@@ -73,10 +73,10 @@
         android:textAllCaps="false"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/acc_name12" />
+        app:layout_constraintTop_toBottomOf="@+id/fav_post4" />
 
     <Button
-        android:id="@+id/acc_name11"
+        android:id="@+id/fav_acc_name4"
         style="?attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
@@ -90,10 +90,10 @@
         android:textAllCaps="false"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/acc_name2" />
+        app:layout_constraintTop_toBottomOf="@+id/fav_post2" />
 
     <Button
-        android:id="@+id/acc_name"
+        android:id="@+id/fav_post1"
         style="?attr/borderlessButtonStyle"
         android:layout_width="155dp"
         android:layout_height="160dp"
@@ -110,10 +110,10 @@
         android:textSize="12sp"
         app:iconPadding="-6dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/acc_name3" />
+        app:layout_constraintTop_toBottomOf="@+id/fav_acc_name1" />
 
     <Button
-        android:id="@+id/acc_name6"
+        android:id="@+id/fav_post3"
         style="?attr/borderlessButtonStyle"
         android:layout_width="155dp"
         android:layout_height="160dp"
@@ -130,10 +130,10 @@
         android:textSize="12sp"
         app:iconPadding="-6dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/acc_name5" />
+        app:layout_constraintTop_toBottomOf="@+id/fav_acc_name3" />
 
     <Button
-        android:id="@+id/acc_name14"
+        android:id="@+id/fav_post5"
         style="?attr/borderlessButtonStyle"
         android:layout_width="155dp"
         android:layout_height="160dp"
@@ -150,10 +150,10 @@
         android:textSize="12sp"
         app:iconPadding="-6dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/acc_name13" />
+        app:layout_constraintTop_toBottomOf="@+id/fav_acc_name5" />
 
     <Button
-        android:id="@+id/acc_name16"
+        android:id="@+id/fav_post6"
         style="?attr/borderlessButtonStyle"
         android:layout_width="155dp"
         android:layout_height="160dp"
@@ -170,10 +170,10 @@
         android:textSize="12sp"
         app:iconPadding="-6dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/acc_name15" />
+        app:layout_constraintTop_toBottomOf="@+id/fav_acc_name6" />
 
     <Button
-        android:id="@+id/acc_name12"
+        android:id="@+id/fav_post4"
         style="?attr/borderlessButtonStyle"
         android:layout_width="155dp"
         android:layout_height="160dp"
@@ -190,10 +190,10 @@
         android:textSize="12sp"
         app:iconPadding="-6dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/acc_name11" />
+        app:layout_constraintTop_toBottomOf="@+id/fav_acc_name4" />
 
     <Button
-        android:id="@+id/acc_name2"
+        android:id="@+id/fav_post2"
         style="?attr/borderlessButtonStyle"
         android:layout_width="155dp"
         android:layout_height="160dp"
@@ -210,10 +210,10 @@
         android:textSize="12sp"
         app:iconPadding="-6dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/acc_name4" />
+        app:layout_constraintTop_toBottomOf="@+id/fav_acc_name2" />
 
     <Button
-        android:id="@+id/acc_name4"
+        android:id="@+id/fav_acc_name2"
         style="?attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
