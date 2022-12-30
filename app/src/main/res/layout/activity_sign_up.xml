@@ -48,13 +48,14 @@
         android:id="@+id/emailtext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="320dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="316dp"
         android:text="Email"
         android:textColor="#000000"
         android:textColorHint="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="220dp" />
+        app:layout_constraintTop_toBottomOf="@+id/CB_food" />
 
     <TextView
         android:id="@+id/emailtext2"
@@ -73,7 +74,7 @@
         android:id="@+id/emailInput"
         android:layout_width="330dp"
         android:layout_height="57dp"
-        android:layout_marginEnd="36dp"
+        android:layout_marginEnd="32dp"
         android:background="@drawable/radiusbox"
         android:backgroundTint="#ECECEC"
         android:ems="10"

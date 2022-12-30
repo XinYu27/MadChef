@@ -93,7 +93,7 @@ public class SignUp extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if(task.isSuccessful()){
                                         Toast.makeText(SignUp.this,"Account registered successfully.",Toast.LENGTH_SHORT).show();
-                                        System.out.println(name+email+pwd);
+
 
                                     }else{
                                         Toast.makeText(SignUp.this,"Please try again!",Toast.LENGTH_SHORT).show();
