@@ -4,16 +4,22 @@ import android.app.Application;
 import android.content.Context;
 import android.util.Patterns;
 
+import com.google.android.gms.common.internal.service.Common;
+
 public class CommonUtils {
     private static Application sApplication;
 
-    public static Application getsApplication(){
-        assert sApplication!=null : "Application in Common Utils is null";
+    public static Application getsApplication() {
+        assert sApplication != null : "Application in Common Utils is null";
         return sApplication;
     }
 
     public static Context getSContext(){
         return getsApplication().getApplicationContext();
+    }
+
+    public static void setsApplication(Application sApplication) {
+        CommonUtils.sApplication = sApplication;
     }
 
     public static boolean emailValid(String email){

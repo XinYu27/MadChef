@@ -16,8 +16,8 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class FirebaseUtils {
     private static FirebaseAuth mAuth =FirebaseAuth.getInstance();
-    private static FirebaseDatabase db =FirebaseDatabase.getInstance();
-    private static DatabaseReference userRef = db.getReference("users");
+    public static FirebaseDatabase db =FirebaseDatabase.getInstance();
+    public static DatabaseReference userRef = db.getReference("users");
     private static String TAG="firebase utils";
 
     public static DatabaseReference getUserRef(){
@@ -41,18 +41,18 @@ public class FirebaseUtils {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
                                             if(task.isSuccessful()){
-                                                Toast.makeText(CommonUtils.getSContext(),"User has been registered successfully!", Toast.LENGTH_LONG).show();
-                                                CommonUtils.getSContext().startActivity(new Intent(CommonUtils.getsApplication(),SignUp.class));
+                                                Toast.makeText(CommonUtils.getSContext(),"User has been registered successfully!", Toast.LENGTH_SHORT).show();
+                                                CommonUtils.getSContext().startActivity(new Intent(CommonUtils.getsApplication(),LogIn.class));
                                                 Log.i(TAG,"Successfully registered user: "+mAuth.getCurrentUser().getUid());
                                             }else{
-                                                Toast.makeText(CommonUtils.getSContext(),"Failed to register, try again!",Toast.LENGTH_LONG).show();
+                                                Toast.makeText(CommonUtils.getSContext(),"Failed to register, try again!",Toast.LENGTH_SHORT).show();
                                                 Log.e(TAG,"Failed to register user: "+mAuth.getCurrentUser().getUid());
                                             }
                                         }
                                     });
 
                         }else{
-                            Toast.makeText(CommonUtils.getSContext(),"Failed to register, try again!", Toast.LENGTH_LONG).show();
+                            Toast.makeText(CommonUtils.getSContext(),"Failed to register, try again!", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
