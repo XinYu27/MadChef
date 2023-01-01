@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_nav"
+    app:startDestination="@id/main_home">
+
+    <fragment
+        android:id="@+id/main_home"
+        android:name="com.example.madchef.Main_home"
+        android:label="fragment_main_home"
+        tools:layout="@layout/fragment_main_home" >
+        <action
+            android:id="@+id/action_main_home_to_searchMenu"
+            app:destination="@id/searchMenu" />
+    </fragment>
+    <activity
+        android:id="@+id/searchMenu"
+        android:name="com.example.madchef.SearchMenu"
+        android:label="activity_search_menu"
+        tools:layout="@layout/activity_search_menu" />
+</navigation>
