@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/homeLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".Main_home">
 
     <TextView
@@ -29,7 +29,7 @@
         android:layout_marginTop="20dp"
         android:fontFamily="@font/inika"
         android:textColor="@color/black"
-        android:text="What are you eating"
+        android:text="What are you eating ?"
         android:textSize="24dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,8 +40,8 @@
         android:id="@+id/random_recipe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="64dp"
         android:src="@drawable/ic_random"
         app:layout_constraintStart_toEndOf="@+id/check_text"
         app:layout_constraintTop_toTopOf="parent"
