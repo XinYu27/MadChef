@@ -97,23 +97,6 @@
             app:layout_constraintTop_toBottomOf="@+id/pref_f_5" />
 
         <Button
-            android:id="@+id/button48"
-            android:layout_width="80dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="18dp"
-            android:layout_marginTop="200dp"
-            android:backgroundTint="#E6E6FA"
-            android:text="Pie"
-            android:textAllCaps="false"
-            android:textColor="@color/black"
-            android:textSize="12sp"
-            app:cornerRadius="10dp"
-            app:layout_constraintEnd_toStartOf="@+id/pref_f_10"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/pref_f_9" />
-
-        <Button
             android:id="@+id/pref_f_10"
             android:layout_width="80dp"
             android:layout_height="48dp"

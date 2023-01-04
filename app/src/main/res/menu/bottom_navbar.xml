@@ -5,7 +5,7 @@
 
     <item
         android:id="@+id/Community"
-        android:icon="@drawable/ic_community"
+        android:icon="@drawable/community"
         android:title="community"/>
     <item
         android:id="@+id/Home"
