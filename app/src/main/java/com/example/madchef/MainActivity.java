@@ -1,6 +1,5 @@
 package com.example.madchef;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -17,25 +16,16 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view. MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarView;
-
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
     ImageView searchbutton;
-
-    BottomNavigationView bottom_navbar;
-    CookingBook CBFragment = new CookingBook();
-    Main_home mainhomeFragment = new Main_home();
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,32 +40,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
 
-
-
         });
 
-        //bottomnavigationview
-        bottom_navbar = findViewById(R.id.bottom_nav_view);
-        getSupportFragmentManager().beginTransaction().replace(R.id.Mainfrag, mainhomeFragment).commit();
 
-        bottom_navbar.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.Home:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.Mainfrag, mainhomeFragment).commit();
-                        return true;
-                    case R.id.Community:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.Mainfrag, CBFragment).commit();
-                        return true;
-                }
-
-                return false;
-            }
-        });
-
-        }
 
 
     }
 
+}
