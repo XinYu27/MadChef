@@ -1,4 +1,4 @@
-package com.example.madchef.Models;
+package com.example.madchef;
 
 import android.os.Bundle;
 
