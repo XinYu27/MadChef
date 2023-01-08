@@ -1,12 +1,22 @@
 package com.example.madchef;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.content.Context;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+
+import com.example.madchef.Adapters.RandomRecipeAdapter;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +24,8 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class Main_home extends Fragment {
+
+    Spinner spinner;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,6 +38,7 @@ public class Main_home extends Fragment {
 
     public Main_home() {
         // Required empty public constructor
+
     }
 
     /**
@@ -53,14 +66,28 @@ public class Main_home extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         return inflater.inflate(R.layout.fragment_main_home, container, false);
     }
 
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
+        spinner = view.findViewById(R.id.foodTypeSelection);
+        ArrayAdapter arrayAdapter =ArrayAdapter.createFromResource(
+                getActivity(),
+                R.array.tags,
+                R.layout.spinner_text
+        );
+        arrayAdapter.setDropDownViewResource(R.layout.spinner_inner_text);
+        spinner.setAdapter(arrayAdapter);
+        spinner.setOnItemSelectedListener(spinnerSelectedListener);
+    }
 }

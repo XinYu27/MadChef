@@ -6,50 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".meal_planning">
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="41dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="34dp"
-        android:layout_marginEnd="8dp"
-        android:background="#00FFFFFF"
-        android:text="<"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toStartOf="@+id/textView10"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="180dp"
-        android:layout_marginTop="52dp"
-        android:text="January"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="41dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="34dp"
-        android:background="#00FFFFFF"
-        android:text=">"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/textView10"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <CalendarView
         android:id="@+id/calendarView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="384dp"
+        android:layout_height="376dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="70dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button4"
@@ -75,42 +39,132 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button4" />
 
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="101dp"
-        android:layout_height="80dp"
-        android:src="@drawable/img_1"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="537dp" />
+    <androidx.gridlayout.widget.GridLayout
+        android:layout_width="411dp"
+        android:layout_height="191dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView14">
 
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="101dp"
-        android:layout_height="25dp"
-        android:background="@drawable/listgrad"
-        android:gravity="center_horizontal"
-        android:text="Fried Chicken"
-        android:textColor="#FFFFFF"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="593dp" />
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="113dp"
+            android:layout_height="95dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp">
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="15dp"
-        android:layout_height="15dp"
-        android:background="#00FFFFFF"
-        android:src="@drawable/img_2"
-        app:layout_constraintTop_toBottomOf="@+id/imageView7"
-        tools:layout_editor_absoluteX="102dp" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp">
 
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Wed, 5th"
-        android:textColor="#000000"
-        android:textSize="10sp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="618dp" />
+                <ImageButton
+                    android:id="@+id/imageButton"
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:background="#00FFFFFF"
+                    android:padding="3dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/img_2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="49dp"
+                    android:layout_height="16dp"
+                    android:gravity="center"
+                    android:text="Wed, 5th"
+                    android:textColor="#000000"
+                    android:textSize="10sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="103dp"
+                    android:layout_height="74dp"
+                    android:src="@drawable/img_1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="103dp"
+                    android:layout_height="36dp"
+                    android:background="@drawable/listgrad"
+                    android:gravity="bottom|center_horizontal"
+                    android:text="Fried Chicken"
+                    android:textColor="#FFFFFF"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+                    app:layout_constraintStart_toStartOf="@+id/imageView7" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView1"
+            android:layout_width="113dp"
+            android:layout_height="95dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp">
+
+                <ImageButton
+                    android:id="@+id/imageButton1"
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:background="#00FFFFFF"
+                    android:padding="3dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/img_2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="49dp"
+                    android:layout_height="16dp"
+                    android:gravity="center"
+                    android:text="Thu, 6th"
+                    android:textColor="#000000"
+                    android:textSize="10sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+
+                <ImageView
+                    android:id="@+id/imageView8"
+                    android:layout_width="103dp"
+                    android:layout_height="74dp"
+                    android:src="@drawable/img_16"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="103dp"
+                    android:layout_height="36dp"
+                    android:background="@drawable/img_15"
+                    android:gravity="bottom|center_horizontal"
+                    android:text="Pepperoni Pizza"
+                    android:textColor="#FFFFFF"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView8"
+                    app:layout_constraintStart_toStartOf="@+id/imageView8" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+    </androidx.gridlayout.widget.GridLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
