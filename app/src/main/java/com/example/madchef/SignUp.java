@@ -93,6 +93,7 @@ public class SignUp extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if(task.isSuccessful()){
                                         Toast.makeText(SignUp.this,"Account registered successfully.",Toast.LENGTH_SHORT).show();
+                                        startActivity(new Intent(SignUp.this,LogIn.class));
 
 
                                     }else{
@@ -129,6 +130,7 @@ public class SignUp extends AppCompatActivity {
 //                }
 
             }
+
         });
 
     }
