@@ -3,9 +3,13 @@ package com.example.madchef;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.MenuCompat;
 import androidx.core.view.MenuItemCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -17,51 +21,85 @@ import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.Toast;
 
+import com.example.madchef.Adapters.RandomRecipeAdapter;
+import com.example.madchef.Listeners.RandomRecipeResponseListener;
+import com.example.madchef.Models.RandomRecipeApiResponse;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class SearchMenu extends AppCompatActivity {
 
-    ListView listView;
-    ArrayList<String> stringArrayList = new ArrayList<>();
-    ArrayAdapter<String> adapter;
+    RecyclerView recyclerView;
+    RandomRecipeAdapter randomRecipeAdapter2;
     ImageView buttonfilter;
+    SearchView searchView;
+    ProgressDialog dialog;
+    RequestManager manager;
+    List<String> tags = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_menu);
 
-        listView = findViewById(R.id.menulist);
-
-        for (int i=0; i<=100; i++){
-            stringArrayList.add("Item"+i);
-        }
-
-        adapter = new ArrayAdapter<>(SearchMenu.this
-        , android.R.layout.simple_list_item_1,stringArrayList);
-
-        listView.setAdapter(adapter);
-
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        searchView = findViewById(R.id.menuSearch);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                Toast.makeText(getApplicationContext(),
-                        adapter.getItem(position),Toast.LENGTH_SHORT).show();
+            public boolean onQueryTextSubmit(String query) {
+                tags.clear();
+                tags.add(query);
+                manager.getRandomRecipes(randomRecipeResponseListener3,tags);
+                dialog.show();
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                return false;
             }
         });
 
+        dialog = new ProgressDialog(this);
+        dialog.setTitle("Loading....");
+
+        manager = new RequestManager(this);
+        //manager.getRandomRecipes(randomRecipeResponseListener3,tags);
+        //dialog.show();
+
+
+
+
+
+
+
     buttonfilter = findViewById(R.id.but_filter);
-    buttonfilter.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            Intent intent = new Intent(SearchMenu.this, filter.class);
-            startActivity(intent);
-        }
+    buttonfilter.setOnClickListener(view -> {
+        Intent intent = new Intent(SearchMenu.this, filter.class);
+        startActivity(intent);
     });
 
-    }
 
-    @Override
+    }
+    final RandomRecipeResponseListener randomRecipeResponseListener3 = new RandomRecipeResponseListener() {
+        @Override
+        public void didFetch(RandomRecipeApiResponse response, String message) {
+            dialog.dismiss();
+            recyclerView = findViewById(R.id.menulist);
+            recyclerView.setHasFixedSize(true);
+            recyclerView.setLayoutManager(new LinearLayoutManager(SearchMenu.this, LinearLayoutManager.VERTICAL,false));
+            randomRecipeAdapter2 = new RandomRecipeAdapter(SearchMenu.this, response.recipes);
+            recyclerView.setAdapter(randomRecipeAdapter2);
+        }
+
+        @Override
+        public void didError(String messaage) {
+            Toast.makeText(SearchMenu.this,messaage,Toast.LENGTH_SHORT);
+        }
+    };
+
+
+    /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
 
@@ -83,5 +121,5 @@ public class SearchMenu extends AppCompatActivity {
             }
         });
         return super.onCreateOptionsMenu(menu);
-    }
+    }*/
 }
