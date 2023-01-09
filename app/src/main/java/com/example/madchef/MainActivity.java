@@ -11,6 +11,7 @@ import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -31,8 +32,6 @@ import com.example.madchef.Adapters.RandomRecipeAdapter;
 import com.example.madchef.Listeners.RandomRecipeResponseListener;
 import com.example.madchef.Models.RandomRecipeApiResponse;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarView;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,12 +44,7 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     Spinner spinner;
     List<String> tags = new ArrayList<>();
-
-    BottomNavigationView bottom_navbar;
-    CookingBook CBFragment = new CookingBook();
-    Main_home mainhomeFragment = new Main_home();
-    AboutUser aboutUserFragment = new AboutUser();
-    Community3 CommunityFragment = new Community3();
+    NavController navController;
 
 
 
@@ -59,72 +53,46 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         searchbutton = findViewById(R.id.search_button);
-        searchbutton.setOnClickListener(view -> {
-            Intent intent = new Intent(MainActivity.this, SearchMenu.class);
-            startActivity(intent);
+        searchbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, SearchMenu.class);
+                startActivity(intent);
+            }
         });
 
 
         dialog = new ProgressDialog(this);
         dialog.setTitle("Loading....");
 
+
+
         manager = new RequestManager(this);
         manager.getRandomRecipes(randomRecipeResponseListener,tags);
         dialog.show();
 
 
-
-        //bottomnavigationview navigation
-        bottom_navbar = findViewById(R.id.bottom_nav_view);
-        getSupportFragmentManager().beginTransaction().replace(R.id.Mainfrag, mainhomeFragment).commit();
-        bottom_navbar.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.Book:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.Mainfrag, CBFragment).commit();
-                        return true;
-                    case R.id.Community:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.Mainfrag, CommunityFragment).commit();
-                        return true;
-                    case R.id.Home:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.Mainfrag, mainhomeFragment).commit();
-                        return true;
-                    case R.id.Profile:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.Mainfrag, aboutUserFragment).commit();
-                        return true;
-                }
-
-                return false;
-            }
-        });
-
-
     }
-
 
     private final RandomRecipeResponseListener randomRecipeResponseListener = new RandomRecipeResponseListener() {
         @Override
         public void didFetch(RandomRecipeApiResponse response, String message) {
-
-           dialog.dismiss();
-           recyclerView = findViewById(R.id.recycler_random);
-           recyclerView.setHasFixedSize(true);
-           recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this, LinearLayoutManager.HORIZONTAL,false));
-           randomRecipeAdapter = new RandomRecipeAdapter(MainActivity.this, response.recipes);
-           recyclerView.setAdapter(randomRecipeAdapter);
-
+            dialog.dismiss();
+            recyclerView = findViewById(R.id.recycler_random);
+            recyclerView.setHasFixedSize(true);
+            recyclerView.setLayoutManager(new GridLayoutManager(MainActivity.this,1));
+            randomRecipeAdapter = new RandomRecipeAdapter(MainActivity.this, response.recipes);
+            recyclerView.setAdapter(randomRecipeAdapter);
 
         }
 
         @Override
-        public void didError(String message) {
-            Toast.makeText(MainActivity.this,message,Toast.LENGTH_SHORT);
+        public void didError(String messaage) {
+            Toast.makeText(MainActivity.this,messaage,Toast.LENGTH_SHORT);
         }
     };
-
+/*
     private final RandomRecipeResponseListener randomRecipeResponseListener2 = new RandomRecipeResponseListener() {
         @Override
         public void didFetch(RandomRecipeApiResponse response, String message) {
@@ -137,27 +105,11 @@ public class MainActivity extends AppCompatActivity {
         }
 
         @Override
-        public void didError(String message) {
-            Toast.makeText(MainActivity.this,message,Toast.LENGTH_SHORT);
+        public void didError(String messaage) {
+            Toast.makeText(MainActivity.this,messaage,Toast.LENGTH_SHORT);
         }
-    };
+    };*/
 
-
-    private final AdapterView.OnItemSelectedListener spinnerSelectedListener = new AdapterView.OnItemSelectedListener() {
-        @Override
-        public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-            tags.clear();
-            tags.add(adapterView.getSelectedItem().toString());
-            manager.getRandomRecipes(randomRecipeResponseListener2,tags);
-            dialog.show();
-
-        }
-
-        @Override
-        public void onNothingSelected(AdapterView<?> adapterView) {
-
-        }
-    };
 
 
 
