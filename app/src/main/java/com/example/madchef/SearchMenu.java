@@ -43,6 +43,7 @@ public class SearchMenu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_menu);
 
+        /*
         searchView = findViewById(R.id.menuSearch);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -54,11 +55,15 @@ public class SearchMenu extends AppCompatActivity {
                 return false;
             }
 
+
+
             @Override
             public boolean onQueryTextChange(String s) {
                 return false;
             }
         });
+
+         */
 
         dialog = new ProgressDialog(this);
         dialog.setTitle("Loading....");
@@ -99,7 +104,7 @@ public class SearchMenu extends AppCompatActivity {
     };
 
 
-    /*@Override
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
 
@@ -116,10 +121,10 @@ public class SearchMenu extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextChange(String s) {
-                adapter.getFilter().filter(s);
+                //adapter.getFilter().filter(s);
                 return false;
             }
         });
         return super.onCreateOptionsMenu(menu);
-    }*/
+    }
 }

@@ -22,19 +22,6 @@
         tools:layout="@layout/activity_search_menu" />
 
 
-    <fragment
-        android:id="@+id/DestcookingBook"
-        android:name="com.example.madchef.CookingBook"
-        android:label="fragment_cooking_book"
-        tools:layout="@layout/fragment_cooking_book" >
-        <action
-            android:id="@+id/action_cookingBook_to_CB_Preference"
-            app:destination="@id/DestCB_Preference" />
-    </fragment>
-    <fragment
-        android:id="@+id/DestCB_Preference"
-        android:name="com.example.madchef.CB_Preference"
-        android:label="CB_Preference" />
 
 
 </navigation>

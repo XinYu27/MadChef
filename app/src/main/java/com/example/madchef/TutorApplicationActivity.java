@@ -1,4 +1,4 @@
-package com.example.community;
+package com.example.madchef;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+
+import com.example.madchef.R;
 
 public class TutorApplicationActivity extends AppCompatActivity {
 

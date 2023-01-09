@@ -80,6 +80,7 @@ public class Main_home extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+
         spinner = view.findViewById(R.id.foodTypeSelection);
         ArrayAdapter arrayAdapter =ArrayAdapter.createFromResource(
                 getActivity(),
@@ -88,6 +89,8 @@ public class Main_home extends Fragment {
         );
         arrayAdapter.setDropDownViewResource(R.layout.spinner_inner_text);
         spinner.setAdapter(arrayAdapter);
-        spinner.setOnItemSelectedListener(spinnerSelectedListener);
+        //spinner.setOnItemSelectedListener(spinnerSelectedListener);
+
+
     }
 }

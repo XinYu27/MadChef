@@ -31,6 +31,8 @@ import com.example.madchef.Adapters.RandomRecipeAdapter;
 import com.example.madchef.Listeners.RandomRecipeResponseListener;
 import com.example.madchef.Models.RandomRecipeApiResponse;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,12 +46,19 @@ public class MainActivity extends AppCompatActivity {
     Spinner spinner;
     List<String> tags = new ArrayList<>();
 
+    BottomNavigationView bottom_navbar;
+    CookingBook CBFragment = new CookingBook();
+    Main_home mainhomeFragment = new Main_home();
+    AboutUser aboutUserFragment = new AboutUser();
+    Community3 CommunityFragment = new Community3();
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         searchbutton = findViewById(R.id.search_button);
         searchbutton.setOnClickListener(view -> {
@@ -66,22 +75,53 @@ public class MainActivity extends AppCompatActivity {
         dialog.show();
 
 
+
+        //bottomnavigationview navigation
+        bottom_navbar = findViewById(R.id.bottom_nav_view);
+        getSupportFragmentManager().beginTransaction().replace(R.id.Mainfrag, mainhomeFragment).commit();
+        bottom_navbar.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.Book:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.Mainfrag, CBFragment).commit();
+                        return true;
+                    case R.id.Community:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.Mainfrag, CommunityFragment).commit();
+                        return true;
+                    case R.id.Home:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.Mainfrag, mainhomeFragment).commit();
+                        return true;
+                    case R.id.Profile:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.Mainfrag, aboutUserFragment).commit();
+                        return true;
+                }
+
+                return false;
+            }
+        });
+
+
     }
+
 
     private final RandomRecipeResponseListener randomRecipeResponseListener = new RandomRecipeResponseListener() {
         @Override
         public void didFetch(RandomRecipeApiResponse response, String message) {
-            dialog.dismiss();
+
+           dialog.dismiss();
            recyclerView = findViewById(R.id.recycler_random);
            recyclerView.setHasFixedSize(true);
            recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this, LinearLayoutManager.HORIZONTAL,false));
            randomRecipeAdapter = new RandomRecipeAdapter(MainActivity.this, response.recipes);
            recyclerView.setAdapter(randomRecipeAdapter);
+
+
         }
 
         @Override
-        public void didError(String messaage) {
-            Toast.makeText(MainActivity.this,messaage,Toast.LENGTH_SHORT);
+        public void didError(String message) {
+            Toast.makeText(MainActivity.this,message,Toast.LENGTH_SHORT);
         }
     };
 
@@ -97,8 +137,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         @Override
-        public void didError(String messaage) {
-            Toast.makeText(MainActivity.this,messaage,Toast.LENGTH_SHORT);
+        public void didError(String message) {
+            Toast.makeText(MainActivity.this,message,Toast.LENGTH_SHORT);
         }
     };
 
@@ -118,6 +158,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
     };
+
 
 
 

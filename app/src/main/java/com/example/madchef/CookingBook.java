@@ -53,13 +53,16 @@ public class CookingBook extends Fragment {
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState){
+
         Button CB_pref = view.findViewById(R.id.CB_pref);
         View.OnClickListener OCLpref = new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                    Navigation.findNavController(view).navigate(R.id.DestCB_Preference);
-                }
+                //Navigation.findNavController(view).navigate(R.id.action_cookingBook_to_CB_Preference);
+                Navigation.findNavController(requireView()).navigate(R.id.action_cookingBook_to_CB_Preference);
+
+            }
             };
             CB_pref.setOnClickListener(OCLpref);
         }

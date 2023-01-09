@@ -279,6 +279,7 @@
 
     <Button
         android:id="@+id/CB_pref"
+        android:onClick="CB_prefOnClick"
         style="?attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
