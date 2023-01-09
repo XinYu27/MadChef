@@ -43,6 +43,42 @@ public class SearchMenu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_menu);
 
+        buttonfilter = findViewById(R.id.but_filter);
+        buttonfilter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent( SearchMenu.this,filter.class);
+                startActivity(intent);
+            }
+        });
+
+        recyclerView = findViewById(R.id.menulist);
+        recyclerView.setHasFixedSize(true);
+
+        searchView = findViewById(R.id.menuSearch);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                tags.clear();
+                tags.add(query);
+                manager.getRandomRecipes(randomRecipeResponseListener3,tags);
+                dialog.show();
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                return false;
+            }
+        });
+
+        dialog = new ProgressDialog(this);
+        dialog.setTitle("Loading....");
+
+        manager = new RequestManager(this);
+        //manager.getRandomRecipes(randomRecipeResponseListener3,tags);
+        //dialog.show();
+
         /*
         searchView = findViewById(R.id.menuSearch);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -55,35 +91,11 @@ public class SearchMenu extends AppCompatActivity {
                 return false;
             }
 
-
-
             @Override
             public boolean onQueryTextChange(String s) {
                 return false;
             }
-        });
-
-         */
-
-        dialog = new ProgressDialog(this);
-        dialog.setTitle("Loading....");
-
-        manager = new RequestManager(this);
-        //manager.getRandomRecipes(randomRecipeResponseListener3,tags);
-        //dialog.show();
-
-
-
-
-
-
-
-    buttonfilter = findViewById(R.id.but_filter);
-    buttonfilter.setOnClickListener(view -> {
-        Intent intent = new Intent(SearchMenu.this, filter.class);
-        startActivity(intent);
-    });
-
+        });*/
 
     }
     final RandomRecipeResponseListener randomRecipeResponseListener3 = new RandomRecipeResponseListener() {
@@ -104,7 +116,7 @@ public class SearchMenu extends AppCompatActivity {
     };
 
 
-    @Override
+    /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
 
@@ -115,16 +127,21 @@ public class SearchMenu extends AppCompatActivity {
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
-            public boolean onQueryTextSubmit(String s) {
-                return false;
+            public boolean onQueryTextSubmit(String query) {
+                tags.clear();
+                tags.add(query);
+                manager.getRandomRecipes(randomRecipeResponseListener3,tags);
+                dialog.show();
+                return true;
+
             }
 
             @Override
             public boolean onQueryTextChange(String s) {
-                //adapter.getFilter().filter(s);
+
                 return false;
             }
         });
         return super.onCreateOptionsMenu(menu);
-    }
+    }*/
 }
