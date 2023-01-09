@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout"
+    android:id="@+id/SVfav"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CB_Favourite">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toBottomOf="@id/TBMainAct">
 
     <Button
         android:id="@+id/fav_acc_name1"
@@ -13,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="59dp"
+        android:layout_marginTop="39dp"
         android:backgroundTint="@color/white"
         android:drawableLeft="@drawable/profile_icon1"
         android:fontFamily="@font/alata"
@@ -218,7 +225,7 @@
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_marginStart="220dp"
-        android:layout_marginTop="59dp"
+        android:layout_marginTop="39dp"
         android:backgroundTint="@color/white"
         android:drawableLeft="@drawable/profile_icon1"
         android:fontFamily="@font/alata"
@@ -229,4 +236,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_random"
+            android:layout_width="407dp"
+            android:layout_height="153dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="4dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fav_post5">
+
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>

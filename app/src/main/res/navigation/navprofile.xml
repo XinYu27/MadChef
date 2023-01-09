@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/profile"
+    app:startDestination="@id/aboutUser">
+
+    <fragment
+        android:id="@+id/meal_planning"
+        android:name="com.example.madchef.meal_planning"
+        android:label="fragment_meal_planning"
+        tools:layout="@layout/fragment_meal_planning" />
+    <fragment
+        android:id="@+id/post"
+        android:name="com.example.madchef.post"
+        android:label="fragment_post"
+        tools:layout="@layout/fragment_post" />
+    <fragment
+        android:id="@+id/aboutUser"
+        android:name="com.example.madchef.AboutUser"
+        android:label="fragment_about_user"
+        tools:layout="@layout/fragment_about_user" >
+        <action
+            android:id="@+id/action_aboutUser_to_meal_planning"
+            app:destination="@id/meal_planning" />
+        <action
+            android:id="@+id/action_aboutUser_to_post"
+            app:destination="@id/post" />
+    </fragment>
+</navigation>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navcommunity"
+    app:startDestination="@id/community2">
+    <activity
+        android:id="@+id/community2"
+        android:name="com.example.madchef.Community2"
+        android:label="activity_community_new"
+        tools:layout="@layout/activity_community2" />
+    <activity
+        android:id="@+id/profile"
+        android:name="com.example.madchef.Profile"
+        android:label="Profile" />
+    <fragment
+        android:id="@+id/recipePage"
+        android:name="com.example.madchef.RecipePage"
+        android:label="fragment_recipe_page"
+        tools:layout="@layout/fragment_recipe_page" />
+    <fragment
+        android:id="@+id/tutorApplication"
+        android:name="com.example.madchef.TutorApplicationActivity"
+        android:label="fragment_tutor_application"
+        tools:layout="@layout/activity_tutor_application" />
+
+</navigation>

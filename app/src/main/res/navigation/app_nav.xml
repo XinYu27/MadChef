@@ -20,6 +20,47 @@
         android:name="com.example.madchef.SearchMenu"
         android:label="activity_search_menu"
         tools:layout="@layout/activity_search_menu" />
+    <activity
+        android:id="@+id/community22"
+        android:name="com.example.madchef.Community2"
+        android:label="activity_community2"
+        tools:layout="@layout/activity_community2" />
+    <activity
+        android:id="@+id/cookingBook2"
+        android:name="com.example.madchef.CookingBook2"
+        android:label="activity_cooking_book2"
+        tools:layout="@layout/activity_cooking_book2" />
+    <activity
+        android:id="@+id/profile2"
+        android:name="com.example.madchef.Profile2"
+        android:label="activity_profile2"
+        tools:layout="@layout/activity_profile2" />
+
+    <navigation
+        android:id="@+id/nav_cookingbook"
+        app:startDestination="@id/DestCB">
+        <fragment
+            android:id="@+id/DestCB_Fav"
+            android:name="com.example.madchef.CB_Favourite"
+            android:label="fragment_c_b__favourite"
+            tools:layout="@layout/fragment_c_b__favourite" />
+        <fragment
+            android:id="@+id/DestCB_Pref"
+            android:name="com.example.madchef.CB_Preference"
+            android:label="CB_Preference" />
+        <fragment
+            android:id="@+id/DestCB"
+            android:name="com.example.madchef.CookingBook"
+            android:label="fragment_cooking_book"
+            tools:layout="@layout/fragment_cooking_book" >
+            <action
+                android:id="@+id/action_DestCB_to_DestCB_Fav"
+                app:destination="@id/DestCB_Fav" />
+            <action
+                android:id="@+id/action_DestCB_to_DestCB_Pref"
+                app:destination="@id/DestCB_Pref" />
+        </fragment>
+    </navigation>
 
 
 

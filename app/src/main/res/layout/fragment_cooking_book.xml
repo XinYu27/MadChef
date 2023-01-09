@@ -1,12 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout2"
+    android:id="@+id/SVcookingbook"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CookingBook">
+    android:name="androidx.navigation.fragment.NavHostFragment"
+    tools:context=".CookingBook"
+    app:defaultNavHost="true"
+    app:navGraph="@navigation/app_nav"
+
+    >
+    <!--
+        app:navController="@id/nav_controller"-->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toBottomOf="parent">
 
     <Button
         android:id="@+id/CB_acc_name2"
@@ -279,7 +291,6 @@
 
     <Button
         android:id="@+id/CB_pref"
-        android:onClick="CB_prefOnClick"
         style="?attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -309,4 +320,6 @@
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CB_food" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

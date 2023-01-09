@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navcookingbook"
+    app:startDestination="@id/cookingBook">
+
+    <fragment
+        android:id="@+id/cookingBook"
+        android:name="com.example.madchef.CookingBook"
+        android:label="fragment_cooking_book"
+        tools:layout="@layout/fragment_cooking_book" >
+        <action
+            android:id="@+id/action_cookingBook_to_CB_Favourite"
+            app:destination="@id/CB_Favourite" />
+        <action
+            android:id="@+id/action_cookingBook_to_CB_Preference"
+            app:destination="@id/CB_Preference" />
+    </fragment>
+    <fragment
+        android:id="@+id/CB_Favourite"
+        android:name="com.example.madchef.CB_Favourite"
+        android:label="fragment_c_b__favourite"
+        tools:layout="@layout/fragment_c_b__favourite" />
+    <fragment
+        android:id="@+id/CB_Preference"
+        android:name="com.example.madchef.CB_Preference"
+        android:label="CB_Preference" />
+</navigation>
