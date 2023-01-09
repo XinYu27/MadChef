@@ -81,23 +81,23 @@ public class CookingBook extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_cooking_book,container, false);
         Button CB_pref = (Button)view.findViewById(R.id.CB_pref);
-        Button CB_fav = (Button)view.findViewById(R.id.CB_fav);
-
 
         CB_pref.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 FragmentTransaction ft = getChildFragmentManager().beginTransaction();
-                ft.replace(R.id.CB_Preference, new CB_Preference());
+                ft.replace(R.id.cookingbookfrag, new CB_Preference());
                 ft.commit();
 
             }
         });
+
+        Button CB_fav = (Button)view.findViewById(R.id.CB_fav);
         CB_fav.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                FragmentTransaction ft = getChildFragmentManager().beginTransaction();
-                ft.replace(R.id.CB_Favourite, new CB_Favourite());
+                FragmentTransaction ft = getParentFragmentManager().beginTransaction();
+                ft.replace(R.id.cookingbookfrag, new CB_Favourite());
                 ft.commit();
 
             }
