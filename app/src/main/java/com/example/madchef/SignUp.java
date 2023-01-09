@@ -3,6 +3,7 @@ package com.example.madchef;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -80,6 +81,11 @@ public class SignUp extends AppCompatActivity {
                     return;
                 }
 
+                if(!emailValidation(email)){
+                    editEmail.setError("Email format is incorrect!");
+                    return;
+                }
+
 
                 //Register the user
 
@@ -110,28 +116,18 @@ public class SignUp extends AppCompatActivity {
                     }
                 });
 
-//                Thread thread = new Thread() {
-//                    @Override
-//                    public void run() {
-//                        super.run();
-//                        FirebaseUtils.registerUser(email, name, pwd, "none", "none");
-//                    }
-//                };
-//
-//                if(!CommonUtils.emailValid(email))
-//                    errorMessage="The email address is invalid.";
-//
-//                if (errorMessage.isEmpty()){
-//                    if(!CommonUtils.pwdValid(pwd,confirmPwd))
-//                        errorMessage="Please check your password again.";
-//                }
-//                if (errorMessage.isEmpty()){
-//                    thread.start();
-//                }
 
             }
 
         });
 
+    }
+
+    public static boolean emailValidation(String email){
+        if(Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+            return true;
+        }else{
+            return false;
+        }
     }
 }
