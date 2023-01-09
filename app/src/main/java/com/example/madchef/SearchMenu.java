@@ -1,25 +1,16 @@
 package com.example.madchef;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.MenuCompat;
-import androidx.core.view.MenuItemCompat;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.ContactsContract;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.SearchView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.madchef.Adapters.RandomRecipeAdapter;
 import com.example.madchef.Listeners.RandomRecipeResponseListener;
@@ -33,7 +24,7 @@ public class SearchMenu extends AppCompatActivity {
     RecyclerView recyclerView;
     RandomRecipeAdapter randomRecipeAdapter2;
     ImageView buttonfilter;
-    SearchView searchView;
+    androidx.appcompat.widget.SearchView searchView;
     ProgressDialog dialog;
     RequestManager manager;
     List<String> tags = new ArrayList<>();
@@ -56,7 +47,7 @@ public class SearchMenu extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
 
         searchView = findViewById(R.id.menuSearch);
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+        searchView.setOnQueryTextListener(new androidx.appcompat.widget.SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 tags.clear();
