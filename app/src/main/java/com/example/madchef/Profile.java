@@ -47,6 +47,7 @@ public class Profile extends AppCompatActivity {
             showUserProfile(firebaseUser);
         }
 
+        //button
 
         logout.setOnClickListener(new View.OnClickListener(){
             @Override
