@@ -4,7 +4,6 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -22,7 +21,7 @@ public class RandomRecipeAdapter extends RecyclerView.Adapter<RandomRecipeViewHo
     Context context;
     List<Recipe> list;
 
-    //constructor
+
     public RandomRecipeAdapter(Context context, List<Recipe> list) {
         this.context = context;
         this.list = list;
@@ -31,45 +30,33 @@ public class RandomRecipeAdapter extends RecyclerView.Adapter<RandomRecipeViewHo
     @NonNull
     @Override
     public RandomRecipeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new RandomRecipeViewHolder(LayoutInflater.from(context).inflate(R.layout.list_recipe, parent, false));
+        return new RandomRecipeViewHolder(LayoutInflater.from(context).inflate(R.layout.insertcarrdview,parent, false));
     }
 
     @Override
     public void onBindViewHolder(@NonNull RandomRecipeViewHolder holder, int position) {
-        holder.RecipePostTitle.setText(list.get(position).title);
-        holder.RecipePostTitle.setSelected(true);
-        //holder.RecipeFavourite.setText(list.get(position).aggregateLikes+" Favourite");
-        //holder.RecipeServing.setText(list.get(position).servings+ " Servings");
-        holder.RecipeDuration.setText(list.get(position).readyInMinutes+" Minutes");
-        Picasso.get().load(list.get(position).image).into(holder.RecipeImage);
+        holder.textview_title.setText(list.get(position).title);
+        holder.textview_title.setSelected(true);
+        holder.textView_timer.setText(list.get(position).readyInMinutes + "MIN");
+        Picasso.get().load(list.get(position).image).into(holder.imageview_food);
     }
 
     @Override
     public int getItemCount() {
-
         return list.size();
     }
 }
-
-
-
 class RandomRecipeViewHolder extends RecyclerView.ViewHolder{
     CardView random_list_container;
-    TextView RecipePostTitle;
-    ImageView RecipeImage;
-    TextView RecipeDuration, RecipeServing, RecipeFavourite;
+    ImageView imageview_food;
+    TextView textview_title,textView_timer;
 
-
-    //constructor
     public RandomRecipeViewHolder(@NonNull View itemView) {
-
         super(itemView);
         random_list_container = itemView.findViewById(R.id.random_list_container);
-        RecipePostTitle = itemView.findViewById(R.id.RecipePostTitle);
-        RecipeImage = itemView.findViewById(R.id.RecipeImage);
-        RecipeDuration = itemView.findViewById(R.id.RecipeDuration);
-        //RecipeServing = itemView.findViewById(R.id.RecipeServing);
-        //RecipeFavourite = itemView.findViewById(R.id.RecipeFavourite);
+        imageview_food = itemView.findViewById(R.id.imageview_food);
+        textview_title = itemView.findViewById(R.id.textview_title);
+        textView_timer = itemView.findViewById(R.id.textView_timer);
 
     }
 }

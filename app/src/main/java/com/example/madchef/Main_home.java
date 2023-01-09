@@ -1,5 +1,6 @@
 package com.example.madchef;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.content.Context;
@@ -7,6 +8,7 @@ import android.content.Context;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
@@ -15,20 +17,26 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.example.madchef.Adapters.RandomRecipeAdapter;
+import com.example.madchef.Listeners.RandomRecipeResponseListener;
+import com.example.madchef.Models.RandomRecipeApiResponse;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Main_home#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main_home extends Fragment {
 
     Spinner spinner;
+    ProgressDialog dialog;
+    RequestManager manager;
+    RandomRecipeAdapter randomRecipeAdapter;
+    RecyclerView recyclerView;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+
+    List<String> tags = new ArrayList<>();
+
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
@@ -41,15 +49,7 @@ public class Main_home extends Fragment {
 
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Main_home.
-     */
-    // TODO: Rename and change types and number of parameters
+
     public static Main_home newInstance(String param1, String param2) {
         Main_home fragment = new Main_home();
         Bundle args = new Bundle();
@@ -73,24 +73,88 @@ public class Main_home extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        return inflater.inflate(R.layout.fragment_main_home, container, false);
+        View view = inflater.inflate(R.layout.fragment_main_home, container, false);
+        dialog = new ProgressDialog(getActivity());
+        manager = new RequestManager(getActivity());
+
+
+
+        spinner = view.findViewById(R.id.foodTypeSelection);
+        ArrayAdapter arrayAdapter = ArrayAdapter.createFromResource(getActivity(), R.array.tags, R.layout.spinner_text);
+        arrayAdapter.setDropDownViewResource(R.layout.spinner_inner_text);
+        spinner.setAdapter(arrayAdapter);
+
+        recyclerView = view.findViewById(R.id.recycler_random);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 1));
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                tags.clear();
+                tags.add(adapterView.getSelectedItem().toString());
+                manager.getRandomRecipes(new RandomRecipeResponseListener() {
+                    @Override
+                    public void didFetch(RandomRecipeApiResponse response, String message) {
+                        dialog.dismiss();
+                        randomRecipeAdapter = new RandomRecipeAdapter(getActivity(), response.recipes);
+                        recyclerView.setAdapter(randomRecipeAdapter);
+                    }
+
+                    @Override
+                    public void didError(String messaage) {
+                        Toast.makeText(getActivity(), messaage, Toast.LENGTH_SHORT);
+                    }
+                }, tags);
+                dialog.show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        return view;
+
+
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-
-        spinner = view.findViewById(R.id.foodTypeSelection);
-        ArrayAdapter arrayAdapter =ArrayAdapter.createFromResource(
-                getActivity(),
-                R.array.tags,
-                R.layout.spinner_text
-        );
-        arrayAdapter.setDropDownViewResource(R.layout.spinner_inner_text);
-        spinner.setAdapter(arrayAdapter);
-        //spinner.setOnItemSelectedListener(spinnerSelectedListener);
-
-
+        spinner.setSelection(0);
     }
+
+    private final RandomRecipeResponseListener randomRecipeResponseListener = new RandomRecipeResponseListener() {
+        @Override
+        public void didFetch(RandomRecipeApiResponse response, String message) {
+            dialog.dismiss();
+
+            randomRecipeAdapter = new RandomRecipeAdapter(getActivity(), response.recipes);
+            recyclerView.setAdapter(randomRecipeAdapter);
+        }
+
+        @Override
+        public void didError(String messaage) {
+            Toast.makeText(getActivity(),messaage,Toast.LENGTH_SHORT);
+        }
+    };
+
+    private final AdapterView.OnItemSelectedListener spinnerSelectedListener = new AdapterView.OnItemSelectedListener() {
+        @Override
+        public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+            tags.clear();
+            tags.add(adapterView.getSelectedItem().toString());
+            manager.getRandomRecipes(randomRecipeResponseListener,tags);
+            dialog.show();
+
+        }
+
+        @Override
+        public void onNothingSelected(AdapterView<?> adapterView) {
+
+        }
+    };
+
 }
