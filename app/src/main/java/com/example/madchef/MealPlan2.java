@@ -1,26 +1,23 @@
 package com.example.madchef;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
-public class Profile2 extends AppCompatActivity {
+public class MealPlan2 extends AppCompatActivity {
 
     BottomNavigationView bottom_navbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile2);
-
-        bottom_navbar = findViewById((R.id.bottom_nav_view));
-        bottom_navbar.setSelectedItemId((R.id.Home));
-
+        setContentView(R.layout.activity_meal_plan2);
         bottom_navbar = findViewById((R.id.bottom_nav_view));
         bottom_navbar.setSelectedItemId((R.id.Home));
 

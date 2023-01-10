@@ -49,6 +49,10 @@ public class CookingBook2 extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(),Profile2.class));
                         overridePendingTransition(0,0);
                         return true;
+                    case R.id.MealPlan:
+                        startActivity(new Intent(getApplicationContext(),MealPlan3.class));
+                        overridePendingTransition(0,0);
+                        return true;
                 }
                 return false;
             }

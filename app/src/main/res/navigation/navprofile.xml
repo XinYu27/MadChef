@@ -9,7 +9,7 @@
         android:id="@+id/meal_planning"
         android:name="com.example.madchef.meal_planning"
         android:label="fragment_meal_planning"
-        tools:layout="@layout/fragment_meal_planning" />
+        tools:layout="@layout/activity_meal_planning" />
     <fragment
         android:id="@+id/post"
         android:name="com.example.madchef.post"

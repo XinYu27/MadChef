@@ -13,10 +13,13 @@ import androidx.recyclerview.widget.RecyclerView;
 public class meal_planning extends AppCompatActivity implements AddMealListAdapter.itemclicked{
     public static final int NEW_NOTE_ACTIVITY_REQUEST_CODE = 1;
     public AddMealViewModel mAddMealModel;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_meal_planning);
+
+
+        setContentView(R.layout.activity_meal_planning);
 
         RecyclerView recyclerView = findViewById(R.id.RVAddMeal);
         final AddMealListAdapter adapter = new AddMealListAdapter(new

@@ -61,8 +61,16 @@
                 app:destination="@id/DestCB_Pref" />
         </fragment>
     </navigation>
-
-
+    <activity
+        android:id="@+id/addMealActivity"
+        android:name="com.example.madchef.AddMealActivity"
+        android:label="activity_add_meal"
+        tools:layout="@layout/activity_add_meal" />
+    <activity
+        android:id="@+id/meal_planning2"
+        android:name="com.example.madchef.meal_planning"
+        android:label="fragment_meal_planning"
+        tools:layout="@layout/activity_meal_planning" />
 
 
 </navigation>

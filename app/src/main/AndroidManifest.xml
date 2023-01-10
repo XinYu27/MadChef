@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.madchef">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -16,8 +16,15 @@
         android:theme="@style/Theme.MadChef"
         tools:targetApi="31">
         <activity
+            android:name=".MealPlan2"
+            android:exported="false" >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,27 +33,32 @@
         </activity>
         <activity
             android:name=".CookingBook2"
-            android:exported="true"/>
-        <activity android:name=".SignUp"
-            android:exported="true"/>
-        <activity android:name=".SearchMenu"
-            android:exported="true"/>
+            android:exported="true" />
+        <activity
+            android:name=".SignUp"
+            android:exported="true" />
+        <activity
+            android:name=".SearchMenu"
+            android:exported="true" />
         <activity
             android:name=".Profile"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".Profile2"
-            android:exported="true"/>
-
+            android:exported="true" />
         <activity
             android:name=".Community2"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".ProfileSetting"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".LogOut"
-            android:exported="true"/>
+            android:exported="true" />
+        <activity
+            android:name=".meal_planning"
+            android:exported="true" />
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
