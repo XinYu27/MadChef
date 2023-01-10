@@ -1,64 +1,86 @@
 package com.example.madchef;
-
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.Toast;
 
-import androidx.fragment.app.Fragment;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link meal_planning#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class meal_planning extends Fragment {
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public meal_planning() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment meal_planning.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static meal_planning newInstance(String param1, String param2) {
-        meal_planning fragment = new meal_planning();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
+public class meal_planning extends AppCompatActivity implements AddMealListAdapter.itemclicked{
+    public static final int NEW_NOTE_ACTIVITY_REQUEST_CODE = 1;
+    public AddMealViewModel mAddMealModel;
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+        setContentView(R.layout.fragment_meal_planning);
+
+        RecyclerView recyclerView = findViewById(R.id.RVAddMeal);
+        final AddMealListAdapter adapter = new AddMealListAdapter(new
+                AddMealListAdapter.NoteDiff());
+        recyclerView.setAdapter(adapter);
+        recyclerView.setNestedScrollingEnabled(false);
+        recyclerView.setLayoutManager(new GridLayoutManager(this,3));
+        mAddMealModel = new
+                ViewModelProvider(this).get(AddMealViewModel.class);
+        mAddMealModel.getAllNotes().observe(this, notes -> {
+            // Update the cached copy of the words in the adapter.
+            adapter.submitList(notes);
+        });
+        Button fab = findViewById(R.id.button4);
+        fab.setOnClickListener( view -> {
+            //AddMeal n = new AddMeal("Thu, Jan 12th","",true,"dgfg");
+            //delete(n);
+            Intent intent = new Intent(meal_planning.this, AddMealActivity.class);
+            startActivityForResult(intent, NEW_NOTE_ACTIVITY_REQUEST_CODE);
+        });
+        ImageButton clear = findViewById(R.id.imageButton2);
+        clear.setOnClickListener(view -> {
+            delete();
+        });
+
+    }
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == NEW_NOTE_ACTIVITY_REQUEST_CODE && resultCode ==
+                RESULT_OK) {
+            int mood =0;
+            // Integer.parseInt(data.getStringExtra(AddMealActivity.ExtraMood));
+            boolean daynight = true;
+            //Boolean.parseBoolean(data.getStringExtra(AddMealActivity.ExtraDayNight));
+            AddMeal note = new
+                    AddMeal(data.getStringExtra(AddMealActivity.ExtraDate), data.getStringExtra(AddMealActivity.ExtraUri),
+                    daynight, data.getStringExtra(AddMealActivity.ExtraNote));
+            mAddMealModel.insert(note);
+
+            /*ImageView imageView = findViewById(R.id.imageView);
+
+            Uri uri = Uri.parse(data.getStringExtra(AddMealActivity.ExtraUri));
+            imageView.setImageURI(uri);
+            Glide.with(this)
+                    .load(new File(uri.getPath()))
+                    .into(imageView);*/
+            //TextView image = findViewById(R.id.textView14);
+            //image.setText(data.getStringExtra(AddMealActivity.ExtraUri));
+
+        } else {
+            Toast.makeText(
+                    getApplicationContext(),
+                    "Meal not saved",
+                    Toast.LENGTH_LONG).show();
         }
     }
+    public void delete(){
+        Toast.makeText(this,"Clear All",Toast.LENGTH_SHORT).show();
+        mAddMealModel.deleteAll();
+    }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_meal_planning, container, false);
+    public void deleteclicked() {
+        Toast.makeText(this,"done",Toast.LENGTH_LONG).show();
+        //mAddMealModel.insert(note);
     }
 }
