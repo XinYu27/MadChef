@@ -35,7 +35,6 @@ public class ProfileSetting extends AppCompatActivity {
         super.onCreate(savedInstance);
         setContentView(R.layout.activity_edit_profile);
 
-//        userRef=db.getReference("users");
 
         ETname = (EditText) findViewById(R.id.editName);
         ETbd = (EditText) findViewById(R.id.editBD);
@@ -56,7 +55,6 @@ public class ProfileSetting extends AppCompatActivity {
         }
 
 
-//        showUserData();
 
         save.setOnClickListener(new View.OnClickListener() {
             @Override

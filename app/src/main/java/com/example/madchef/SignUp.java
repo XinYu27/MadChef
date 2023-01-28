@@ -41,9 +41,8 @@ public class SignUp extends AppCompatActivity {
 
 
         if(mAuth.getCurrentUser()!= null ){
-            //rmb change activity
-//            startActivity(new Intent(getApplicationContext(),LogIn.class));
-//            finish();
+            startActivity(new Intent(SignUp.this,MainActivity.class));
+            finish();
 
         }
 
