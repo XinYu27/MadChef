@@ -23,7 +23,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".LogIn"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -58,6 +58,9 @@
         <activity
             android:name=".meal_planning"
             android:exported="true" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"/>
 
         <meta-data
             android:name="preloaded_fonts"
