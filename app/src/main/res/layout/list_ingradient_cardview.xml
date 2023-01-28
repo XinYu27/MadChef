@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:elevation="8dp"
+    android:layout_margin="8dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/ingredient_card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="15dp"
+        app:strokeWidth="4dp"
+        app:strokeColor="#e6e6fa">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="quantity"
+                android:singleLine="true"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+                android:gravity="center"
+                android:textSize="16dp"
+                android:padding="2sp"
+                android:id="@+id/ingredientquatity"/>
+
+            <ImageView
+                android:id="@+id/ingredientimage"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="center"
+                tools:srcCompat="@tools:sample/avatars"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/ingredientname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="name"
+                android:singleLine="true"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="16dp"
+                android:padding="2sp"/>
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.cardview.widget.CardView>

@@ -105,6 +105,14 @@ public class SearchMenu extends AppCompatActivity {
             Toast.makeText(SearchMenu.this,messaage,Toast.LENGTH_SHORT);
         }
     };
+    
+    final RecipeClickListener recipeClickListener2 = new RecipeClickListener() {
+        @Override
+        public void onRecipeClicked(String id) {
+            startActivity(new Intent(SearchMenu.this, RecipeDetailActivity.class)
+                    .putExtra("id",id));
+        }
+    };
 
 
     /*@Override
