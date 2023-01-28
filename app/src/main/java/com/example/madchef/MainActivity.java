@@ -111,7 +111,8 @@ public class MainActivity extends AppCompatActivity {
                         getSupportFragmentManager().beginTransaction().replace(R.id.Mainfrag, aboutUserFragment).commit();
                         return true;
                     case R.id.MealPlan:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.Mainfrag, MealPlanFrag).commit();
+                        Intent intent = new Intent(getApplicationContext(),meal_planning.class);
+                        startActivity(intent);
                         return true;
                 }
 
@@ -170,7 +171,10 @@ public class MainActivity extends AppCompatActivity {
         }
     };*/
 
-
+    public void BtmMealPlanOnClick(View v){
+        Intent intent = new Intent(getApplicationContext(),meal_planning.class);
+        startActivity(intent);
+    }
 
 
 
