@@ -21,7 +21,7 @@
     <item
         android:id="@+id/MealPlan"
         android:icon="@drawable/ic_bowl"
-        android:title="Meal Plan"/>
+        android:title="Meal Plan" />
 
 
 
