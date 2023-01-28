@@ -39,7 +39,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageView searchbutton;
+    ImageView searchbutton, settingbutton;
     ProgressDialog dialog;
     RequestManager manager;
     RandomRecipeAdapter randomRecipeAdapter;
@@ -62,10 +62,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         searchbutton = findViewById(R.id.search_button);
+        settingbutton = findViewById(R.id.setting_button);
         searchbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, SearchMenu.class);
+                startActivity(intent);
+            }
+        });
+
+        settingbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,Profile.class);
                 startActivity(intent);
             }
         });
@@ -102,7 +111,8 @@ public class MainActivity extends AppCompatActivity {
                         getSupportFragmentManager().beginTransaction().replace(R.id.Mainfrag, aboutUserFragment).commit();
                         return true;
                     case R.id.MealPlan:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.Mainfrag, MealPlanFrag).commit();
+                        Intent intent = new Intent(getApplicationContext(),meal_planning.class);
+                        startActivity(intent);
                         return true;
                 }
 
@@ -143,6 +153,14 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this,messaage,Toast.LENGTH_SHORT);
         }
     };
+    
+    private final RecipeClickListener recipeClickListener = new RecipeClickListener() {
+        @Override
+        public void onRecipeClicked(String id) {
+            startActivity(new Intent(MainActivity.this, RecipeDetailActivity.class)
+                    .putExtra("id",id));
+        }
+    };
 /*
     private final RandomRecipeResponseListener randomRecipeResponseListener2 = new RandomRecipeResponseListener() {
         @Override
@@ -161,7 +179,10 @@ public class MainActivity extends AppCompatActivity {
         }
     };*/
 
-
+    public void BtmMealPlanOnClick(View v){
+        Intent intent = new Intent(getApplicationContext(),meal_planning.class);
+        startActivity(intent);
+    }
 
 
 

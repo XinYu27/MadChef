@@ -1,16 +1,8 @@
 package com.example.madchef;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
-import android.content.Context;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,8 +11,15 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.madchef.Adapters.RandomRecipeAdapter;
 import com.example.madchef.Listeners.RandomRecipeResponseListener;
+import com.example.madchef.Listeners.RecipeClickListener;
 import com.example.madchef.Models.RandomRecipeApiResponse;
 
 import java.util.ArrayList;
@@ -36,6 +35,8 @@ public class Main_home extends Fragment {
 
 
     List<String> tags = new ArrayList<>();
+
+
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -97,7 +98,7 @@ public class Main_home extends Fragment {
                     @Override
                     public void didFetch(RandomRecipeApiResponse response, String message) {
                         dialog.dismiss();
-                        randomRecipeAdapter = new RandomRecipeAdapter(getActivity(), response.recipes);
+                        randomRecipeAdapter = new RandomRecipeAdapter(getActivity(), response.recipes, listener);
                         recyclerView.setAdapter(randomRecipeAdapter);
                     }
 
@@ -131,7 +132,7 @@ public class Main_home extends Fragment {
         public void didFetch(RandomRecipeApiResponse response, String message) {
             dialog.dismiss();
 
-            randomRecipeAdapter = new RandomRecipeAdapter(getActivity(), response.recipes);
+            randomRecipeAdapter = new RandomRecipeAdapter(getActivity(), response.recipes, listener);
             recyclerView.setAdapter(randomRecipeAdapter);
         }
 
@@ -154,6 +155,15 @@ public class Main_home extends Fragment {
         @Override
         public void onNothingSelected(AdapterView<?> adapterView) {
 
+        }
+    };
+
+    RecipeClickListener listener = new RecipeClickListener(){
+        @Override
+        public void onRecipeClicked(String id){
+            Intent intent = new Intent(getActivity(), RecipeDetailActivity.class);
+            intent.putExtra("recipe_id", id);
+            startActivity(intent);
         }
     };
 

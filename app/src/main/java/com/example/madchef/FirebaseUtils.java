@@ -29,13 +29,13 @@ public class FirebaseUtils {
         return mAuth;
     }
 
-    public static void registerUser (String email, String name, String password, String birthDate, String phoneNum){
+    public static void registerUser (String email, String name, String password, String birthDate, String phoneNum, String diet, String allergies, String cuisine, String food){
         mAuth.createUserWithEmailAndPassword(email,password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            User user=new User(email, name, password, birthDate, phoneNum);
+                            User user=new User(email, name, password, birthDate, phoneNum,diet,allergies,cuisine,food);
                             userRef
                                     .child(mAuth.getCurrentUser().getUid())
                                     .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {

@@ -93,13 +93,13 @@ public class SignUp extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            User user= new User (email,name,pwd,"none","none");
+                            User user= new User (email,name,pwd,"none","none","none","none","none","none");
                             userRef.child(mAuth.getCurrentUser().getUid()).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if(task.isSuccessful()){
                                         Toast.makeText(SignUp.this,"Account registered successfully.",Toast.LENGTH_SHORT).show();
-                                        startActivity(new Intent(SignUp.this,LogIn.class));
+                                        startActivity(new Intent(SignUp.this,MainActivity.class));
 
 
                                     }else{
