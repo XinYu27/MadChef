@@ -153,6 +153,14 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this,messaage,Toast.LENGTH_SHORT);
         }
     };
+    
+    private final RecipeClickListener recipeClickListener = new RecipeClickListener() {
+        @Override
+        public void onRecipeClicked(String id) {
+            startActivity(new Intent(MainActivity.this, RecipeDetailActivity.class)
+                    .putExtra("id",id));
+        }
+    };
 /*
     private final RandomRecipeResponseListener randomRecipeResponseListener2 = new RandomRecipeResponseListener() {
         @Override
