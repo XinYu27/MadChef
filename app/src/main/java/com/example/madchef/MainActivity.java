@@ -18,6 +18,7 @@ import com.example.madchef.Listeners.RandomRecipeResponseListener;
 import com.example.madchef.Models.RandomRecipeApiResponse;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.example.madchef.Listeners.RecipeClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,11 +34,7 @@ public class MainActivity extends AppCompatActivity {
     List<String> tags = new ArrayList<>();
 
     BottomNavigationView bottom_navbar;
-    CookingBook CBFragment = new CookingBook();
     Main_home mainhomeFragment = new Main_home();
-    AboutUser aboutUserFragment = new AboutUser();
-    Community3 CommunityFragment = new Community3();
-    MealPlan3 MealPlanFrag = new MealPlan3();
 
 
 
@@ -78,25 +75,30 @@ public class MainActivity extends AppCompatActivity {
 
         //bottomnavigationview navigation
         bottom_navbar = findViewById(R.id.bottom_nav_view);
+        bottom_navbar.setSelectedItemId((R.id.Home));
         getSupportFragmentManager().beginTransaction().replace(R.id.Mainfrag, mainhomeFragment).commit();
         bottom_navbar.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.Book:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.Mainfrag, CBFragment).commit();
+                        startActivity(new Intent(getApplicationContext(), CookingBook.class));
+                        overridePendingTransition(0,0);
                         return true;
                     case R.id.Community:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.Mainfrag, CommunityFragment).commit();
+                        startActivity(new Intent(getApplicationContext(), Community.class));
+                        overridePendingTransition(0,0);
                         return true;
                     case R.id.Home:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.Mainfrag, mainhomeFragment).commit();
-                        return true;
-                    case R.id.Profile:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.Mainfrag, aboutUserFragment).commit();
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        overridePendingTransition(0,0);
                         return true;
                     case R.id.Post:
-                        Intent intent = new Intent(getApplicationContext(),post.class);
+                        startActivity(new Intent(getApplicationContext(), post.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.Profile:
+                        Intent intent = new Intent(getApplicationContext(), AboutUserActivity.class);
                         startActivity(intent);
                         return true;
                 }

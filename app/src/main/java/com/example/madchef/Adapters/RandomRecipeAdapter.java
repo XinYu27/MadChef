@@ -25,10 +25,10 @@ public class RandomRecipeAdapter extends RecyclerView.Adapter<RandomRecipeViewHo
     RecipeClickListener listener;
 
 
-    public RandomRecipeAdapter(Context context, List<Recipe> list, RecipeClickListener listener) {
+    public RandomRecipeAdapter(Context context, List<Recipe> list) {
         this.context = context;
         this.list = list;
-        this.listener = listener;
+        //this.listener = listener;
     }
 
     @NonNull

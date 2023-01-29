@@ -16,20 +16,21 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import android.view.LayoutInflater;
+
+import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.webkit.MimeTypeMap;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.app.AlertDialog;
+
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -42,7 +43,6 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.StorageTask;
 
 import java.util.HashMap;
-import java.util.List;
 
 
 public class post extends AppCompatActivity {
@@ -54,13 +54,46 @@ public class post extends AppCompatActivity {
     ImageView sharepost, image_added;
     TextView post;
     EditText caption,recipe, ingredient, tool, duration;
-
+    BottomNavigationView bottom_navbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_post);
 
-        setContentView(R.layout.fragment_post);
+        //bottomnavigationview navigation
+        bottom_navbar = findViewById(R.id.bottom_nav_view);
+        bottom_navbar.setSelectedItemId((R.id.Post));
+        bottom_navbar.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.Book:
+                        startActivity(new Intent(getApplicationContext(), CookingBook.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.Community:
+                        startActivity(new Intent(getApplicationContext(), Community.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.Home:
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.Post:
+                        startActivity(new Intent(getApplicationContext(), post.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.Profile:
+                        Intent intent = new Intent(getApplicationContext(), AboutUserActivity.class);
+                        startActivity(intent);
+                        return true;
+                }
+
+                return false;
+            }
+        });
+
         boolean includeDocuments = false;
         PackageManager packageManager = null;
 
@@ -70,7 +103,7 @@ public class post extends AppCompatActivity {
         ingredient = findViewById(R.id.ETIngredients);
         tool = findViewById(R.id.ETTool);
         duration = findViewById(R.id.ETDuration);
-        sharepost = findViewById(R.id.sharepost);
+        sharepost = findViewById(R.id.setting_button);
 
         storageReference = FirebaseStorage.getInstance().getReference("posts");
         sharepost.setOnClickListener(new View.OnClickListener() {
