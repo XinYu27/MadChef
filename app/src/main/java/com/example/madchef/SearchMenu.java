@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.madchef.Adapters.RandomRecipeAdapter;
 import com.example.madchef.Listeners.RandomRecipeResponseListener;
+import com.example.madchef.Listeners.RecipeClickListener;
 import com.example.madchef.Models.RandomRecipeApiResponse;
 
 import java.util.ArrayList;
@@ -96,7 +97,7 @@ public class SearchMenu extends AppCompatActivity {
             recyclerView = findViewById(R.id.menulist);
             recyclerView.setHasFixedSize(true);
             recyclerView.setLayoutManager(new LinearLayoutManager(SearchMenu.this, LinearLayoutManager.VERTICAL,false));
-            randomRecipeAdapter2 = new RandomRecipeAdapter(SearchMenu.this, response.recipes);
+            randomRecipeAdapter2 = new RandomRecipeAdapter(SearchMenu.this, response.recipes,recipeClickListener2);
             recyclerView.setAdapter(randomRecipeAdapter2);
         }
 

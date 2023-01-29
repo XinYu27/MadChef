@@ -22,9 +22,9 @@
         tools:layout="@layout/activity_search_menu" />
     <activity
         android:id="@+id/community22"
-        android:name="com.example.madchef.Community2"
+        android:name="com.example.madchef.Community"
         android:label="activity_community2"
-        tools:layout="@layout/activity_community2" />
+        tools:layout="@layout/activity_community" />
     <activity
         android:id="@+id/cookingBook2"
         android:name="com.example.madchef.CookingBook2"
@@ -32,9 +32,9 @@
         tools:layout="@layout/activity_cooking_book2" />
     <activity
         android:id="@+id/profile2"
-        android:name="com.example.madchef.Profile2"
+        android:name="com.example.madchef.AboutUserActivity"
         android:label="activity_profile2"
-        tools:layout="@layout/activity_profile2" />
+        tools:layout="@layout/activity_aboutuser" />
 
     <navigation
         android:id="@+id/nav_cookingbook"

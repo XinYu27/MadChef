@@ -1,30 +1,15 @@
 package com.example.madchef;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.widget.Toolbar;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.fragment.NavHostFragment;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view. MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -33,6 +18,7 @@ import com.example.madchef.Listeners.RandomRecipeResponseListener;
 import com.example.madchef.Models.RandomRecipeApiResponse;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.example.madchef.Listeners.RecipeClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,11 +34,7 @@ public class MainActivity extends AppCompatActivity {
     List<String> tags = new ArrayList<>();
 
     BottomNavigationView bottom_navbar;
-    CookingBook CBFragment = new CookingBook();
     Main_home mainhomeFragment = new Main_home();
-    AboutUser aboutUserFragment = new AboutUser();
-    Community3 CommunityFragment = new Community3();
-    MealPlan3 MealPlanFrag = new MealPlan3();
 
 
 
@@ -93,25 +75,30 @@ public class MainActivity extends AppCompatActivity {
 
         //bottomnavigationview navigation
         bottom_navbar = findViewById(R.id.bottom_nav_view);
+        bottom_navbar.setSelectedItemId((R.id.Home));
         getSupportFragmentManager().beginTransaction().replace(R.id.Mainfrag, mainhomeFragment).commit();
         bottom_navbar.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.Book:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.Mainfrag, CBFragment).commit();
+                        startActivity(new Intent(getApplicationContext(), CookingBook.class));
+                        overridePendingTransition(0,0);
                         return true;
                     case R.id.Community:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.Mainfrag, CommunityFragment).commit();
+                        startActivity(new Intent(getApplicationContext(), Community.class));
+                        overridePendingTransition(0,0);
                         return true;
                     case R.id.Home:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.Mainfrag, mainhomeFragment).commit();
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.Post:
+                        startActivity(new Intent(getApplicationContext(), post.class));
+                        overridePendingTransition(0,0);
                         return true;
                     case R.id.Profile:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.Mainfrag, aboutUserFragment).commit();
-                        return true;
-                    case R.id.MealPlan:
-                        Intent intent = new Intent(getApplicationContext(),meal_planning.class);
+                        Intent intent = new Intent(getApplicationContext(), AboutUserActivity.class);
                         startActivity(intent);
                         return true;
                 }
@@ -143,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
             recyclerView = findViewById(R.id.recycler_random);
             recyclerView.setHasFixedSize(true);
             recyclerView.setLayoutManager(new GridLayoutManager(MainActivity.this,1));
-            randomRecipeAdapter = new RandomRecipeAdapter(MainActivity.this, response.recipes);
+            randomRecipeAdapter = new RandomRecipeAdapter(MainActivity.this, response.recipes,recipeClickListener);
             recyclerView.setAdapter(randomRecipeAdapter);
 
         }
@@ -153,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this,messaage,Toast.LENGTH_SHORT);
         }
     };
-    
+    //aku x import (so nnti ade error kat sini)-just import
     private final RecipeClickListener recipeClickListener = new RecipeClickListener() {
         @Override
         public void onRecipeClicked(String id) {
@@ -181,6 +168,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void BtmMealPlanOnClick(View v){
         Intent intent = new Intent(getApplicationContext(),meal_planning.class);
+        startActivity(intent);
+    }
+    public void BtmPostOnClick(View v){
+        Intent intent = new Intent(getApplicationContext(),post.class);
         startActivity(intent);
     }
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -12,69 +12,74 @@
     app:navGraph="@navigation/app_nav"
     >
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            app:layout_constraintHorizontal_bias="0.0"
             android:id="@+id/fragment_container"
             app:layout_constraintTop_toBottomOf="parent">
 
-        <TextView
-        android:id="@+id/TVMainDish"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/alata"
-        android:text="Food/Dish :"
-        android:textColor="@color/black"
-        android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TVMainCuisine" />
+            <TextView
+                android:id="@+id/TVMainDish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/alata"
+                android:text="Food/Dish :"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/TVMainCuisine" />
 
-    <TextView
-        android:id="@+id/TVMainCuisine"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="41dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/alata"
-        android:text="Cuisine :"
-        android:textColor="@color/black"
-        android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TVMainAllerg" />
+            <TextView
+                android:id="@+id/TVMainCuisine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="41dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/alata"
+                android:text="Cuisine :"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/TVMainAllerg" />
 
-    <TextView
-        android:id="@+id/TVMainDiet"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="18dp"
-        android:fontFamily="@font/alata"
-        android:text="Diet :"
-        android:textColor="@color/black"
-        android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/BPref" />
+            <TextView
+                android:id="@+id/TVMainDiet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="18dp"
+                android:fontFamily="@font/alata"
+                android:text="Diet :"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/BPref" />
 
-    <TextView
-        android:id="@+id/TVDispDiet"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="18dp"
-        android:background="#E6E6FA"
-        android:fontFamily="@font/alata"
-        android:text="Diet"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="12sp"
-        android:paddingStart="5dp"
-        android:paddingEnd="5dp"
-        app:layout_constraintStart_toEndOf="@+id/TVMainDiet"
-        app:layout_constraintTop_toBottomOf="@+id/BPref" />
+            <TextView
+                android:id="@+id/TVDispDiet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="18dp"
+                android:background="#E6E6FA"
+                android:fontFamily="@font/alata"
+                android:text="Diet"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                app:layout_constraintStart_toEndOf="@+id/TVMainDiet"
+                app:layout_constraintTop_toBottomOf="@+id/BPref" />
 
-        <TextView
+            <TextView
                 android:id="@+id/TVDispCuisine"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -102,55 +107,55 @@
                 app:layout_constraintStart_toStartOf="@+id/TVDispDiet"
                 app:layout_constraintTop_toTopOf="@+id/TVMainAllerg" />
 
-    <TextView
-        android:id="@+id/TVMainAllerg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/alata"
-        android:text="Allergies :"
-        android:textColor="@color/black"
-        android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TVMainDiet" />
+            <TextView
+                android:id="@+id/TVMainAllerg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/alata"
+                android:text="Allergies :"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/TVMainDiet" />
 
 
-    <Button
-        android:id="@+id/BPref_edit"
-        style="?attr/borderlessButtonStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="46dp"
-        android:layout_marginEnd="24dp"
-        android:backgroundTint="#FFFFFF"
-        android:text="edit"
-        android:textAllCaps="false"
-        android:textColor="#777777"
-        android:textSize="12sp"
-        android:onClick="OnClickToPref"
-        app:iconPadding="0dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <Button
+                android:id="@+id/BPref_edit"
+                style="?attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="46dp"
+                android:layout_marginEnd="24dp"
+                android:backgroundTint="#FFFFFF"
+                android:text="edit"
+                android:textAllCaps="false"
+                android:textColor="#777777"
+                android:textSize="12sp"
+                android:onClick="OnClickToPref"
+                app:iconPadding="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/BPref"
-        style="?attr/borderlessButtonStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="48dp"
-        android:drawableLeft="@drawable/restaurant"
-        android:drawablePadding="10dp"
-        android:fontFamily="@font/alata"
-        android:text="Preference"
-        android:textAllCaps="false"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/BPref"
+                style="?attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="48dp"
+                android:drawableLeft="@drawable/restaurant"
+                android:drawablePadding="10dp"
+                android:fontFamily="@font/alata"
+                android:text="Preference"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
+            <TextView
                 android:id="@+id/BFav"
                 style="?attr/borderlessButtonStyle"
                 android:layout_width="wrap_content"
@@ -166,47 +171,58 @@
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/TVDispDish" />
-        <Button
-            android:id="@+id/BFav_more"
-            style="?attr/borderlessButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="24dp"
-            android:backgroundTint="#FFFFFF"
-            android:text="more.."
-            android:textAllCaps="false"
-            android:textColor="#777777"
-            android:textSize="12sp"
-            android:onClick="OnClickToFav"
-            app:iconPadding="0dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/BFav" />
+            <Button
+                android:id="@+id/BFav_more"
+                style="?attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:backgroundTint="#FFFFFF"
+                android:text="more.."
+                android:textAllCaps="false"
+                android:textColor="#777777"
+                android:textSize="12sp"
+                android:onClick="OnClickToFav"
+                app:iconPadding="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/BFav" />
 
-        <TextView
-            android:id="@+id/TVDispDish"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#E6E6FA"
-            android:fontFamily="@font/alata"
-            android:text="None"
-            android:textColor="@color/black"
-            android:textSize="12sp"
-            android:paddingStart="5dp"
-            android:paddingEnd="5dp"
-            app:layout_constraintStart_toStartOf="@+id/TVDispCuisine"
-            app:layout_constraintTop_toTopOf="@+id/TVMainDish" />
+            <TextView
+                android:id="@+id/TVDispDish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#E6E6FA"
+                android:fontFamily="@font/alata"
+                android:text="None"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                app:layout_constraintStart_toStartOf="@+id/TVDispCuisine"
+                app:layout_constraintTop_toTopOf="@+id/TVMainDish" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/RVFav"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            app:layout_constraintStart_toStartOf="@+id/BFav"
-            app:layout_constraintTop_toBottomOf="@+id/BFav" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/RVFav"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="@+id/BFav"
+                app:layout_constraintTop_toBottomOf="@+id/BFav" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="#e6e6fa"
+        app:menu="@menu/bottom_navbar"
+        app:itemIconTint="@drawable/selector"
+        android:layout_alignParentBottom="true"
+        />
 
-
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -37,6 +37,7 @@ public class meal_planning extends AppCompatActivity implements AddMealListAdapt
         fab.setOnClickListener( view -> {
             //AddMeal n = new AddMeal("Thu, Jan 12th","",true,"dgfg");
             //delete(n);
+            Toast.makeText(this, "nice", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(meal_planning.this, AddMealActivity.class);
             startActivityForResult(intent, NEW_NOTE_ACTIVITY_REQUEST_CODE);
         });

@@ -14,17 +14,15 @@
         android:id="@+id/Home"
         android:icon="@drawable/ic_home"
         android:title="Home"/>
+
+    <item
+        android:id="@+id/Post"
+        android:icon="@drawable/baseline_add_box_24"
+        android:title="Post" />
     <item
         android:id="@+id/Profile"
         android:icon="@drawable/ic_profile"
         android:title="Profile"/>
-    <item
-        android:id="@+id/MealPlan"
-        android:icon="@drawable/ic_bowl"
-        android:title="Meal Plan" />
-
-
-
 
 
 </menu>

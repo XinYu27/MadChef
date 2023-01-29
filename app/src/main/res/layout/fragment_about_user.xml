@@ -68,7 +68,7 @@
         android:layout_marginStart="36dp"
         android:layout_marginTop="65dp"
         android:gravity="center_horizontal|center_vertical"
-        android:text="4"
+        android:text="0"
         android:textColor="#000000"
         android:textSize="14sp"
         android:textStyle="bold"
@@ -84,50 +84,50 @@
         android:layout_marginStart="23dp"
         android:layout_marginTop="65dp"
         android:gravity="center_horizontal|center_vertical"
-        android:text="66M"
+        android:text="0"
         android:textColor="#000000"
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/textView12"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="68dp"
-        android:layout_height="68dp"
-        android:layout_marginStart="21dp"
-        android:layout_marginTop="51dp"
-        android:src="@drawable/img_3"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="51dp"
+            android:src="@drawable/profile_pic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="37dp"
-        android:layout_height="15dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="67dp"
-        android:layout_marginTop="65dp"
-        android:gravity="center_horizontal|center_vertical"
-        android:text="200"
-        android:textColor="#000000"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/imageView8"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="37dp"
+            android:layout_height="15dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="65dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/imageView8"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView17"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="67dp"
-        android:layout_marginTop="8dp"
-        android:text="Posts"
-        android:textColor="#000000"
-        android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@+id/imageView8"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="8dp"
+            android:text="Posts"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/imageView8"
+            app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
     <ImageView
         android:id="@+id/imageView9"
@@ -139,17 +139,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView20" />
 
-    <TextView
-        android:id="@+id/textView20"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp"
-        android:text="Speciality"
-        android:textColor="#000000"
-        android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="15dp"
+            android:text="Speciality"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView8" />
 
     <ImageView
         android:id="@+id/imageView10"
@@ -181,202 +181,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView22" />
 
-    <androidx.gridlayout.widget.GridLayout
-        android:layout_width="411dp"
-        android:layout_height="413dp"
-        android:layout_marginTop="12dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/divider2"
-        app:useDefaultMargins="true">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/divider2" />
 
-        <ImageView
-            android:id="@+id/imageView11"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
-            android:src="@drawable/img_6"
-            app:layout_column="0"
-            app:layout_row="0" />
-
-        <ImageView
-            android:id="@+id/imageView12"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
-            android:src="@drawable/img_7"
-            app:layout_column="1"
-            app:layout_row="0" />
-
-        <ImageView
-            android:id="@+id/imageView13"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
-            android:src="@drawable/img_8"
-            app:layout_column="2"
-            app:layout_row="0" />
-
-        <ImageView
-            android:id="@+id/imageView15"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
-            android:src="@drawable/img_9"
-            app:layout_column="0"
-            app:layout_row="1" />
-
-        <ImageView
-            android:id="@+id/imageView22"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
-            android:src="@drawable/img_10"
-            app:layout_column="1"
-            app:layout_row="1" />
-
-        <ImageView
-            android:id="@+id/imageView30"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
-            android:src="@drawable/img_11"
-            app:layout_column="2"
-            app:layout_row="1" />
-
-        <ImageView
-            android:id="@+id/imageView31"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
-            android:src="@drawable/img_12"
-            app:layout_column="0"
-            app:layout_row="2" />
-
-        <ImageView
-            android:id="@+id/imageView32"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
-            android:src="@drawable/img_13"
-            app:layout_column="1"
-            app:layout_row="2" />
-
-        <ImageView
-            android:id="@+id/imageView33"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
-            android:src="@drawable/img_14"
-            app:layout_column="2"
-            app:layout_row="2" />
-
-        <TextView
-            android:id="@+id/textView25"
-            android:layout_width="130dp"
-            android:layout_height="60dp"
-            android:background="@drawable/img_17"
-            android:gravity="bottom"
-            android:text="   Kimchi"
-            android:textColor="#FFFFFFFF"
-            android:textSize="12sp"
-            app:layout_column="0"
-            app:layout_gravity="bottom|fill_horizontal"
-            app:layout_row="0" />
-
-        <TextView
-            android:id="@+id/textView26"
-            android:layout_width="130dp"
-            android:layout_height="60dp"
-            android:background="@drawable/img_18"
-            android:gravity="bottom"
-            android:text="   Tteobokki"
-            android:textColor="#FFFFFFFF"
-            android:textSize="12sp"
-            app:layout_column="1"
-            app:layout_gravity="bottom|fill_horizontal"
-            app:layout_row="0" />
-
-        <TextView
-            android:id="@+id/textView27"
-            android:layout_width="130dp"
-            android:layout_height="60dp"
-            android:background="@drawable/img_19"
-            android:gravity="bottom"
-            android:text="   Jjajangmyeon"
-            android:textColor="#FFFFFFFF"
-            android:textSize="12sp"
-            app:layout_column="2"
-            app:layout_gravity="bottom|fill_horizontal"
-            app:layout_row="0" />
-
-        <TextView
-            android:id="@+id/textView28"
-            android:layout_width="130dp"
-            android:layout_height="60dp"
-            android:background="@drawable/img_20"
-            android:gravity="bottom"
-            android:text="   Naengmyeon"
-            android:textColor="#FFFFFFFF"
-            android:textSize="12sp"
-            app:layout_column="0"
-            app:layout_gravity="bottom|fill_horizontal"
-            app:layout_row="1" />
-
-        <TextView
-            android:id="@+id/textView29"
-            android:layout_width="130dp"
-            android:layout_height="60dp"
-            android:background="@drawable/img_21"
-            android:gravity="bottom"
-            android:text="  Spicy Stir-Fried Squid"
-            android:textColor="#FFFFFFFF"
-            android:textSize="12sp"
-            app:layout_column="1"
-            app:layout_gravity="bottom|fill_horizontal"
-            app:layout_row="1" />
-
-        <TextView
-            android:id="@+id/textView30"
-            android:layout_width="130dp"
-            android:layout_height="60dp"
-            android:background="@drawable/img_22"
-            android:gravity="bottom"
-            android:text="   Ramyeon"
-            android:textColor="#FFFFFFFF"
-            android:textSize="12sp"
-            app:layout_column="2"
-            app:layout_gravity="bottom|fill_horizontal"
-            app:layout_row="1" />
-
-        <TextView
-            android:id="@+id/textView31"
-            android:layout_width="130dp"
-            android:layout_height="60dp"
-            android:background="@drawable/img_23"
-            android:gravity="bottom"
-            android:text="   Mandu"
-            android:textColor="#FFFFFFFF"
-            android:textSize="12sp"
-            app:layout_column="0"
-            app:layout_gravity="bottom|fill_horizontal"
-            app:layout_row="2" />
-
-        <TextView
-            android:id="@+id/textView32"
-            android:layout_width="130dp"
-            android:layout_height="60dp"
-            android:background="@drawable/img_24"
-            android:gravity="bottom"
-            android:text="   Bibimbap"
-            android:textColor="#FFFFFFFF"
-            android:textSize="12sp"
-            app:layout_column="1"
-            app:layout_gravity="bottom|fill_horizontal"
-            app:layout_row="2" />
-
-        <TextView
-            android:id="@+id/textView33"
-            android:layout_width="130dp"
-            android:layout_height="60dp"
-            android:background="@drawable/img_25"
-            android:gravity="bottom"
-            android:text="   Kimbap"
-            android:textColor="#FFFFFFFF"
-            android:textSize="12sp"
-            app:layout_column="2"
-            app:layout_gravity="bottom|fill_horizontal"
-            app:layout_row="2" />
-    </androidx.gridlayout.widget.GridLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

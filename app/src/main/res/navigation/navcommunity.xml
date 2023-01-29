@@ -7,9 +7,9 @@
     app:startDestination="@id/community2">
     <activity
         android:id="@+id/community2"
-        android:name="com.example.madchef.Community2"
+        android:name="com.example.madchef.Community"
         android:label="activity_community_new"
-        tools:layout="@layout/activity_community2" />
+        tools:layout="@layout/activity_community" />
     <activity
         android:id="@+id/profile"
         android:name="com.example.madchef.Profile"

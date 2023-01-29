@@ -98,7 +98,7 @@ public class Main_home extends Fragment {
                     @Override
                     public void didFetch(RandomRecipeApiResponse response, String message) {
                         dialog.dismiss();
-                        randomRecipeAdapter = new RandomRecipeAdapter(getActivity(), response.recipes, listener);
+                        randomRecipeAdapter = new RandomRecipeAdapter(getActivity(), response.recipes,listener);
                         recyclerView.setAdapter(randomRecipeAdapter);
                     }
 
@@ -132,7 +132,7 @@ public class Main_home extends Fragment {
         public void didFetch(RandomRecipeApiResponse response, String message) {
             dialog.dismiss();
 
-            randomRecipeAdapter = new RandomRecipeAdapter(getActivity(), response.recipes, listener);
+            randomRecipeAdapter = new RandomRecipeAdapter(getActivity(), response.recipes,listener);
             recyclerView.setAdapter(randomRecipeAdapter);
         }
 
