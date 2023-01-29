@@ -6,18 +6,22 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class LogIn extends AppCompatActivity {
     FirebaseAuth mAuth;
+    private TextView forgotPassword;
+
 
     @Override
     protected void onCreate (Bundle savedInstanceState) {
@@ -30,6 +34,16 @@ public class LogIn extends AppCompatActivity {
         Button signUp = (Button) findViewById(R.id.signUpBtn1);
         Button logIn = (Button)findViewById(R.id.loginBtn2);
         mAuth= FirebaseAuth.getInstance();
+
+        forgotPassword = findViewById(R.id.forgotPassword);
+
+        forgotPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LogIn.this, ResetPasswordLoginActivity.class));
+                finish();
+            }
+        });
 
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,6 +85,11 @@ public class LogIn extends AppCompatActivity {
                         }else{
                             Toast.makeText(LogIn.this,"Unable to log in.",Toast.LENGTH_SHORT).show();
                         }
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(LogIn.this, "Something Went Wrong, Try Again!", Toast.LENGTH_SHORT).show();
                     }
                 });
             }
