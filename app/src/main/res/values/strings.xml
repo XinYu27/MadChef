@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">MadChef</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="api_Key">c19deda405404cd798c0b3d92e6a3c0d</string>
+    <string name="api_Key">4da0a0632b2c49e2b5caa984f75c8800</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="appliance_tool"><![CDATA[Appliance & Tool]]></string>
     <string-array name="tags">
