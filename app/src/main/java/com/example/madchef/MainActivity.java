@@ -144,8 +144,12 @@ public class MainActivity extends AppCompatActivity {
     private final RecipeClickListener recipeClickListener = new RecipeClickListener() {
         @Override
         public void onRecipeClicked(String id) {
-            startActivity(new Intent(MainActivity.this, RecipeDetailActivity.class)
-                    .putExtra("id",id));
+            Intent intent = new Intent(MainActivity.this, RecipeDetailActivity.class);
+            intent.putExtra("id",id);
+            Toast.makeText(MainActivity.this, "loading...", Toast.LENGTH_SHORT).show();
+            startActivity(intent);
+            //startActivity(new Intent(MainActivity.this, RecipeDetailActivity.class)
+                    //.putExtra("id",id));
         }
     };
 /*

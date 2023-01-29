@@ -21,7 +21,7 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 public class RecipeDetailActivity extends AppCompatActivity {
-    int id;
+    int id=1;
     TextView recipename, recipetime, recipeserving, authorname, meal_summary;
     ImageView recipeimage;
     RecyclerView recycler_mealIngredientsID, recylcer_meal_instruction;
@@ -36,8 +36,8 @@ public class RecipeDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_recipe_detail);
 
         findViewById();
-
-        id = Integer.parseInt(getIntent().getStringExtra("id"));
+        if (getIntent().getStringExtra("id")!=null){
+        id = Integer.parseInt(getIntent().getStringExtra("id"));}
         manager = new RequestManager(this);
         manager.getRecipeDetails(recipeDetailsListener, id);
         manager.getInstruction(instructionListener, id);

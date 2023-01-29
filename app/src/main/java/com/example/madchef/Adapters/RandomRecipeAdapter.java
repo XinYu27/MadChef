@@ -1,19 +1,23 @@
 package com.example.madchef.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.madchef.Listeners.RecipeClickListener;
+import com.example.madchef.MainActivity;
 import com.example.madchef.Models.Recipe;
 import com.example.madchef.R;
+import com.example.madchef.RecipeDetailActivity;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -25,10 +29,10 @@ public class RandomRecipeAdapter extends RecyclerView.Adapter<RandomRecipeViewHo
     RecipeClickListener listener;
 
 
-    public RandomRecipeAdapter(Context context, List<Recipe> list) {
+    public RandomRecipeAdapter(Context context, List<Recipe> list,RecipeClickListener listener) {
         this.context = context;
         this.list = list;
-        //this.listener = listener;
+        this.listener = listener;
     }
 
     @NonNull
@@ -47,7 +51,11 @@ public class RandomRecipeAdapter extends RecyclerView.Adapter<RandomRecipeViewHo
         holder.random_list_container.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                listener.onRecipeClicked(String.valueOf(list.get(holder.getAdapterPosition()).id));
+                Intent intent = new Intent(context, RecipeDetailActivity.class);
+                intent.putExtra("id",String.valueOf(list.get(holder.getAdapterPosition()).id));
+                //Toast.makeText(MainActivity.this, "loading...", Toast.LENGTH_SHORT).show();
+                context.startActivity(intent);
+                //listener.onRecipeClicked(String.valueOf(list.get(holder.getAdapterPosition()).id));
             }
         });
     }

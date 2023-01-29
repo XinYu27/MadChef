@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridLayout;
+import android.widget.TextView;
 
 import com.example.madchef.Adapters.MyPostAdapter;
 import com.example.madchef.Models.PostObject;
@@ -82,6 +83,7 @@ public class AboutUser extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_about_user, container, false);
+        TextView postcount = view.findViewById(R.id.postcount);
         // Inflate the layout for this fragment
         recyclerView = view.findViewById(R.id.recycle);
         recyclerView.setHasFixedSize(true);
@@ -91,6 +93,8 @@ public class AboutUser extends Fragment {
         myPostAdapter = new MyPostAdapter(getContext(),postObjectList);
         recyclerView.setAdapter(myPostAdapter);
         myPosts();
+        //postcount.setText("myPostAdapter.getItemCount()");
+        //postcount.setText(myPostAdapter.getItemCount());
         return view;
     }
     private void myPosts(){
@@ -114,5 +118,6 @@ public class AboutUser extends Fragment {
 
             }
         });
+
     }
 }
