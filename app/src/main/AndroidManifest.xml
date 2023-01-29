@@ -54,6 +54,9 @@
             android:name=".LogOut"
             android:exported="true" />
         <activity
+            android:name=".DeleteUser"
+            android:exported="true"/>
+        <activity
             android:name=".meal_planning"
             android:exported="true" />
         <activity

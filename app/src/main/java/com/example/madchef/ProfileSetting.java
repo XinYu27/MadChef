@@ -26,7 +26,7 @@ public class ProfileSetting extends AppCompatActivity {
     FirebaseUser firebaseUser = fb.getCurrentUser();
     EditText ETname,ETbd,ETphonenum,ETemail,ETpwd;
     private String email,name,birthdate,phone,password;
-    Button save;
+    Button save, delete;
     ImageView logout;
 
     @Override
@@ -43,6 +43,7 @@ public class ProfileSetting extends AppCompatActivity {
         ETpwd = (EditText) findViewById(R.id.editPwd);
         save = (Button)findViewById(R.id.saveBtn);
         logout=(ImageView)findViewById(R.id.imageView23);
+        delete = (Button) findViewById(R.id.deleteBtn);
 
 
 
@@ -70,6 +71,16 @@ public class ProfileSetting extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent= new Intent(ProfileSetting.this,DeleteUser.class);
+                startActivity(intent);
+            }
+        });
+
     }
     
 
