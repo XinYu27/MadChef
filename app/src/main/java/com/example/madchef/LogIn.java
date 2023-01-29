@@ -76,4 +76,9 @@ public class LogIn extends AppCompatActivity {
             }
         });
     }
+
+    public void OnClickToForgetPass(View v) {
+        Intent intent = new Intent(this, ResetPasswordActivity.class);
+        startActivity(intent);
+    }
 }
