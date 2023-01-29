@@ -21,14 +21,17 @@ import java.util.List;
 public class RandomRecipeAdapter extends RecyclerView.Adapter<RandomRecipeViewHolder>{
     Context context;
     List<Recipe> list;
-
     RecipeClickListener listener;
 
+    public RandomRecipeAdapter(Context context, List<Recipe> list, RecipeClickListener listener) {
+        this.context = context;
+        this.list = list;
+        this.listener = listener;
+    }
 
     public RandomRecipeAdapter(Context context, List<Recipe> list) {
         this.context = context;
         this.list = list;
-        //this.listener = listener;
     }
 
     @NonNull
