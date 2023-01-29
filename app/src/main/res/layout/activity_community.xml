@@ -1,587 +1,97 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Community">
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/TBMainAct"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="?attr/actionBarSize"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:background="#e6e6fa">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp">
-
-
-        </RelativeLayout>
-
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent" tools:context=".Community">
+    <androidx.appcompat.widget.Toolbar android:id="@+id/TBMainAct" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="?attr/actionBarSize" app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent" android:background="#e6e6fa">
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp"> </RelativeLayout>
     </androidx.appcompat.widget.Toolbar>
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/TBMainAct"
-        app:layout_constraintStart_toStartOf="parent">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:context=".MainActivity">
-
-            <LinearLayout
-                android:id="@+id/ll1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="0dp"
-                android:padding="10dp"
-                android:orientation="vertical"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <Button
-                    android:id="@+id/RecipePostTitle"
-                    style="?attr/borderlessButtonStyle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:drawableLeft="@drawable/profile_icon1"
-                    android:ellipsize="marquee"
-                    android:marqueeRepeatLimit="marquee_forever"
-                    android:scrollHorizontally="true"
-                    android:singleLine="true"
-                    android:text="Jisoo Kim"
-                    android:textAlignment="textStart"
-                    android:textAllCaps="false"
-                    android:textColor="@color/black"
-                    android:textSize="16dp"
-                    app:iconPadding="10dp"
-                    tools:ignore="DuplicateClickableBoundsCheck" />
-
-                <ImageView
-                    android:id="@+id/RecipeImage"
-                    android:layout_width="match_parent"
-                    android:layout_height="300dp"
-                    android:layout_margin="8dp"
-                    android:clickable="true"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/fettucine_alfredo"
-                    tools:ignore="SpeakableTextPresentCheck,DuplicateClickableBoundsCheck" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="10dp"
-                        android:textColor="@color/black"
-                        android:text="Just tried cooking this dish \n \n#DishbyGordonRamsay\n#Delicious"/>
+    <ScrollView android:layout_width="match_parent" android:layout_height="wrap_content" app:layout_constraintTop_toBottomOf="@+id/TBMainAct" app:layout_constraintStart_toStartOf="parent">
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" tools:context=".MainActivity">
+            <LinearLayout android:id="@+id/ll1" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_alignParentStart="true" android:layout_marginStart="0dp" android:orientation="vertical" android:padding="10dp" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
+                <Button android:id="@+id/RecipePostTitle1" style="?attr/borderlessButtonStyle" android:layout_width="match_parent" android:layout_height="wrap_content" android:drawableLeft="@drawable/profile_icon1" android:ellipsize="marquee" android:marqueeRepeatLimit="marquee_forever" android:scrollHorizontally="true" android:singleLine="true" android:text="Gordon Ramsey" android:textAlignment="textStart" android:textAllCaps="false" android:textColor="@color/black" android:textSize="16dp" app:iconPadding="10dp" tools:ignore="DuplicateClickableBoundsCheck"/>
+                <ImageView android:id="@+id/RecipeImage" android:layout_width="match_parent" android:layout_height="300dp" android:layout_margin="8dp" android:clickable="true" android:scaleType="centerCrop" android:src="@drawable/fettucine_alfredo" tools:ignore="SpeakableTextPresentCheck,DuplicateClickableBoundsCheck"/>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="10dp" android:text="Just tried cooking this dish \n \n#DishbyGordonRamsay\n#Delicious" android:textColor="@color/black"/>
                 </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_like" />
-
-                        <TextView
-                            android:id="@+id/RecipeDuration"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:padding="8dp"
-                            android:text="2304"
-                            android:textColor="@color/black"
-                            android:textSize="14dp" />
-
-
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+                        <ImageView android:id="@+id/whiteheart1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_like"/>
+                        <ImageView android:id="@+id/redheart1" android:layout_width="40dp" android:layout_height="40dp" android:layout_marginTop="-24dp" android:src="@drawable/redhearticon" android:visibility="gone"/>
+                        <TextView android:id="@+id/RecipeDuration" android:layout_width="wrap_content" android:layout_height="wrap_content" android:padding="8dp" android:text="2304" android:textColor="@color/black" android:textSize="14dp"/>
                     </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:id="@+id/comment">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_comment" />
-
-                        <TextView
-                            android:id="@+id/RecipeServing"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:padding="8dp"
-                            android:text="1387"
-                            android:textColor="@color/black"
-                            android:textSize="14dp" />
-
-
+                    <LinearLayout android:id="@+id/comment" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+                        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_comment"/>
+                        <TextView android:id="@+id/RecipeServing" android:layout_width="wrap_content" android:layout_height="wrap_content" android:padding="8dp" android:text="1387" android:textColor="@color/black" android:textSize="14dp"/>
                     </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_bookmark" />
-
-                        <TextView
-                            android:id="@+id/RecipeFavourite"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:padding="8dp"
-                            android:text="472"
-                            android:textColor="@color/black"
-                            android:textSize="14dp" />
-
-
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+                        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_bookmark"/>
+                        <TextView android:id="@+id/RecipeFavourite" android:layout_width="wrap_content" android:layout_height="wrap_content" android:padding="8dp" android:text="472" android:textColor="@color/black" android:textSize="14dp"/>
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/ll1"
-                android:padding="10dp"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="0dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginEnd="0dp"
-                android:layout_marginBottom="0dp"
-                android:orientation="vertical"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <Button
-                    android:id="@+id/RecipePostTitle2"
-                    style="?attr/borderlessButtonStyle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:drawableLeft="@drawable/profile_icon1"
-                    android:ellipsize="marquee"
-                    android:marqueeRepeatLimit="marquee_forever"
-                    android:scrollHorizontally="true"
-                    android:singleLine="true"
-                    android:text="Lalisa"
-                    android:textAlignment="textStart"
-                    android:textAllCaps="false"
-                    android:textColor="@color/black"
-                    android:textSize="16dp"
-                    app:iconPadding="10dp" />
-
-                <ImageView
-                    android:id="@+id/RecipeImage2"
-                    android:layout_width="match_parent"
-                    android:layout_height="300dp"
-                    android:layout_margin="8dp"
-                    android:clickable="true"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/emptyplate"
-                    tools:ignore="SpeakableTextPresentCheck,DuplicateClickableBoundsCheck" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="10dp"
-                        android:textColor="@color/black"
-                        android:text="Anyone have a suggestion for dinner today? \n#veryhungry  #wanttostresseat"/>
+            <LinearLayout android:id="@+id/ll2" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_below="@+id/ll1" android:padding="10dp" android:layout_alignParentStart="true" android:layout_marginStart="0dp" android:layout_marginTop="30dp" android:layout_marginEnd="0dp" android:layout_marginBottom="0dp" android:orientation="vertical" app:layout_constraintTop_toTopOf="parent">
+                <Button android:id="@+id/RecipePostTitle2" style="?attr/borderlessButtonStyle" android:layout_width="match_parent" android:layout_height="wrap_content" android:drawableLeft="@drawable/profile_icon1" android:ellipsize="marquee" android:marqueeRepeatLimit="marquee_forever" android:scrollHorizontally="true" android:singleLine="true" android:text="Lalisa" android:textAlignment="textStart" android:textAllCaps="false" android:textColor="@color/black" android:textSize="16dp" app:iconPadding="10dp"/>
+                <ImageView android:id="@+id/RecipeImage2" android:layout_width="match_parent" android:layout_height="300dp" android:layout_margin="8dp" android:clickable="true" android:scaleType="centerCrop" android:src="@drawable/emptyplate" tools:ignore="SpeakableTextPresentCheck,DuplicateClickableBoundsCheck"/>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="10dp" android:textColor="@color/black" android:text="Anyone have a suggestion for dinner today? \n#veryhungry #wanttostresseat"/>
                 </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_like" />
-
-                        <TextView
-                            android:id="@+id/RecipeDuration2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:padding="8dp"
-                            android:text="1029"
-                            android:textColor="@color/black"
-                            android:textSize="14dp" />
-
-
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+                        <ImageView android:id="@+id/whiteheart2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_like"/>
+                        <ImageView android:id="@+id/redheart2" android:layout_width="50dp" android:layout_height="50dp" android:layout_marginTop="-24dp" android:src="@drawable/redhearticon" android:visibility="gone"/>
+                        <TextView android:id="@+id/RecipeDuration2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:padding="8dp" android:text="1029" android:textColor="@color/black" android:textSize="14dp"/>
                     </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_comment" />
-
-                        <TextView
-                            android:id="@+id/RecipeServing2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:padding="8dp"
-                            android:text="682"
-                            android:textColor="@color/black"
-                            android:textSize="14dp" />
-
-
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+                        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_comment"/>
+                        <TextView android:id="@+id/RecipeServing2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:padding="8dp" android:text="682" android:textColor="@color/black" android:textSize="14dp"/>
                     </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_bookmark" />
-
-                        <TextView
-                            android:id="@+id/RecipeFavourite2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:padding="8dp"
-                            android:text="30"
-                            android:textColor="@color/black"
-                            android:textSize="14dp" />
-
-
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+                        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_bookmark"/>
+                        <TextView android:id="@+id/RecipeFavourite2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:padding="8dp" android:text="30" android:textColor="@color/black" android:textSize="14dp"/>
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/ll2"
-                android:padding="10dp"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="0dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginEnd="0dp"
-                android:layout_marginBottom="0dp"
-                android:orientation="vertical"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <Button
-                    android:id="@+id/RecipePostTitle3"
-                    style="?attr/borderlessButtonStyle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:drawableLeft="@drawable/profile_icon1"
-                    android:ellipsize="marquee"
-                    android:marqueeRepeatLimit="marquee_forever"
-                    android:scrollHorizontally="true"
-                    android:singleLine="true"
-                    android:text="Jennie Kim"
-                    android:textAlignment="textStart"
-                    android:textAllCaps="false"
-                    android:textColor="@color/black"
-                    android:textSize="16dp"
-                    app:iconPadding="10dp" />
-
-                <ImageView
-                    android:id="@+id/RecipeImage3"
-                    android:layout_width="match_parent"
-                    android:layout_height="300dp"
-                    android:layout_margin="8dp"
-                    android:clickable="true"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/jjajangmyeon"
-                    tools:ignore="SpeakableTextPresentCheck" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="10dp"
-                        android:textColor="@color/black"
-                        android:text="Third time's the charm\nfinally get the right taste!! \n#nevergiveup  #typagirl  #futurepro"/>
+            <LinearLayout android:id="@+id/ll3" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_below="@+id/ll2" android:padding="10dp" android:layout_alignParentStart="true" android:layout_marginStart="0dp" android:layout_marginTop="30dp" android:layout_marginEnd="0dp" android:layout_marginBottom="0dp" android:orientation="vertical" app:layout_constraintTop_toTopOf="parent">
+                <Button android:id="@+id/RecipePostTitle3" style="?attr/borderlessButtonStyle" android:layout_width="match_parent" android:layout_height="wrap_content" android:drawableLeft="@drawable/profile_icon1" android:ellipsize="marquee" android:marqueeRepeatLimit="marquee_forever" android:scrollHorizontally="true" android:singleLine="true" android:text="Jennie Kim" android:textAlignment="textStart" android:textAllCaps="false" android:textColor="@color/black" android:textSize="16dp" app:iconPadding="10dp"/>
+                <ImageView android:id="@+id/RecipeImage3" android:layout_width="match_parent" android:layout_height="300dp" android:layout_margin="8dp" android:clickable="true" android:scaleType="centerCrop" android:src="@drawable/jjajangmyeon" tools:ignore="SpeakableTextPresentCheck"/>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="10dp" android:textColor="@color/black" android:text="Third time's the charm\nfinally get the right taste!! \n#nevergiveup #typagirl #futurepro"/>
                 </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_like" />
-
-                        <TextView
-                            android:id="@+id/RecipeDuration3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:padding="8dp"
-                            android:text="898"
-                            android:textColor="@color/black"
-                            android:textSize="14dp" />
-
-
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+                        <ImageView android:id="@+id/whiteheart3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_like"/>
+                        <ImageView android:id="@+id/redheart3" android:layout_width="10dp" android:layout_height="10dp" android:layout_marginTop="-24dp" android:src="@drawable/redhearticon" android:visibility="gone"/>
+                        <TextView android:id="@+id/RecipeDuration3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:padding="8dp" android:text="898" android:textColor="@color/black" android:textSize="14dp"/>
                     </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_comment" />
-
-                        <TextView
-                            android:id="@+id/RecipeServing3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:padding="8dp"
-                            android:text="274"
-                            android:textColor="@color/black"
-                            android:textSize="14dp" />
-
-
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+                        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_comment"/>
+                        <TextView android:id="@+id/RecipeServing3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:padding="8dp" android:text="274" android:textColor="@color/black" android:textSize="14dp"/>
                     </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_bookmark" />
-
-                        <TextView
-                            android:id="@+id/RecipeFavourite3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:padding="8dp"
-                            android:text="201"
-                            android:textColor="@color/black"
-                            android:textSize="14dp" />
-
-
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+                        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_bookmark"/>
+                        <TextView android:id="@+id/RecipeFavourite3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:padding="8dp" android:text="201" android:textColor="@color/black" android:textSize="14dp"/>
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/ll3"
-                android:padding="10dp"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="0dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginBottom="30dp"
-                android:layout_marginEnd="0dp"
-                android:orientation="vertical"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <Button
-                    android:id="@+id/RecipePostTitle4"
-                    style="?attr/borderlessButtonStyle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:drawableLeft="@drawable/profile_icon1"
-                    android:ellipsize="marquee"
-                    android:marqueeRepeatLimit="marquee_forever"
-                    android:scrollHorizontally="true"
-                    android:singleLine="true"
-                    android:text="Roseanne Park"
-                    android:textAlignment="textStart"
-                    android:textAllCaps="false"
-                    android:textColor="@color/black"
-                    android:textSize="16dp"
-                    app:iconPadding="10dp" />
-
-                <ImageView
-                    android:id="@+id/RecipeImage4"
-                    android:layout_width="match_parent"
-                    android:layout_height="300dp"
-                    android:layout_margin="8dp"
-                    android:clickable="true"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/lasagna"
-                    tools:ignore="SpeakableTextPresentCheck" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="10dp"
-                        android:textColor="@color/black"
-                        android:text="Can't believe how delicious this is\nI finished it so fast!\n Will totally add it to my fav recipies\n#Gone  #FavouriteRecipe #Yummy"/>
+            <LinearLayout android:id="@+id/ll4" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_below="@+id/ll3" android:padding="10dp" android:layout_alignParentStart="true" android:layout_marginStart="0dp" android:layout_marginTop="30dp" android:layout_marginBottom="30dp" android:layout_marginEnd="0dp" android:orientation="vertical" app:layout_constraintTop_toTopOf="parent">
+                <Button android:id="@+id/RecipePostTitle4" style="?attr/borderlessButtonStyle" android:layout_width="match_parent" android:layout_height="wrap_content" android:drawableLeft="@drawable/profile_icon1" android:ellipsize="marquee" android:marqueeRepeatLimit="marquee_forever" android:scrollHorizontally="true" android:singleLine="true" android:text="Roseanne Park" android:textAlignment="textStart" android:textAllCaps="false" android:textColor="@color/black" android:textSize="16dp" app:iconPadding="10dp"/>
+                <ImageView android:id="@+id/RecipeImage4" android:layout_width="match_parent" android:layout_height="300dp" android:layout_margin="8dp" android:clickable="true" android:scaleType="centerCrop" android:src="@drawable/lasagna" tools:ignore="SpeakableTextPresentCheck"/>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="10dp" android:textColor="@color/black" android:text="Can't believe how delicious this is\nI finished it so fast!\n Will totally add it to my fav recipies\n#Gone #FavouriteRecipe #Yummy"/>
                 </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_like" />
-
-                        <TextView
-                            android:id="@+id/RecipeDuration4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:padding="8dp"
-                            android:text="936"
-                            android:textColor="@color/black"
-                            android:textSize="14dp" />
-
-
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+                        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_like"/>
+                        <TextView android:id="@+id/RecipeDuration4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:padding="8dp" android:text="936" android:textColor="@color/black" android:textSize="14dp"/>
                     </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_comment" />
-
-                        <TextView
-                            android:id="@+id/RecipeServing4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:padding="8dp"
-                            android:text="382"
-                            android:textColor="@color/black"
-                            android:textSize="14dp" />
-
-
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+                        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_comment"/>
+                        <TextView android:id="@+id/RecipeServing4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:padding="8dp" android:text="382" android:textColor="@color/black" android:textSize="14dp"/>
                     </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_bookmark" />
-
-                        <TextView
-                            android:id="@+id/RecipeFavourite4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:padding="8dp"
-                            android:text="73"
-                            android:textColor="@color/black"
-                            android:textSize="14dp" />
-
-
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+                        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_bookmark"/>
+                        <TextView android:id="@+id/RecipeFavourite4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:padding="8dp" android:text="73" android:textColor="@color/black" android:textSize="14dp"/>
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
-
-
-
-
         </RelativeLayout>
     </ScrollView>
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_nav_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:background="#e6e6fa"
-        app:menu="@menu/bottom_navbar"
-        app:itemIconTint="@drawable/selector"
-        android:layout_alignParentBottom="true"
-        />
-
+    <com.google.android.material.bottomnavigation.BottomNavigationView android:id="@+id/bottom_nav_view" android:layout_width="match_parent" android:layout_height="wrap_content" app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent" android:background="#e6e6fa" app:menu="@menu/bottom_navbar" app:itemIconTint="@drawable/selector" android:layout_alignParentBottom="true"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
