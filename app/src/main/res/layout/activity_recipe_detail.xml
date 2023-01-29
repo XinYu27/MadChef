@@ -31,11 +31,11 @@
                 <TextView
                     android:id="@+id/recipename"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inika"
                     android:gravity="center"
                     android:padding="8dp"
                     android:text="RecipeName"
-                    android:fontFamily="@font/inika"
                     android:textSize="20dp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"

@@ -2,6 +2,7 @@ package com.example.madchef;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.text.Html;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -65,7 +66,7 @@ public class RecipeDetailActivity extends AppCompatActivity {
             recipetime.setText(response.readyInMinutes + " minutes");
             recipeserving.setText(response.servings + " persons");
             authorname.setText(response.sourceName);
-            meal_summary.setText(response.summary);
+            meal_summary.setText(Html.fromHtml(response.summary));
             Picasso.get().load(response.image).into(recipeimage);
 
             recycler_mealIngredientsID.setHasFixedSize(true);

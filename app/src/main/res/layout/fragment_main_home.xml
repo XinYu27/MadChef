@@ -9,49 +9,60 @@
     tools:context=".Main_home">
 
 
-    <TextView
-        android:id="@+id/check_text"
-        android:layout_width="265dp"
-        android:layout_height="67dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="60dp"
-        android:fontFamily="@font/inika"
-        android:text="Check out \nthis cuisine Today!"
-        android:textColor="@color/black"
-        android:textSize="24dp"
-        android:textStyle="bold"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/TopBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/check_text"
+                android:layout_width="265dp"
+                android:layout_height="67dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/inika"
+                android:text="Check out \nthis cuisine Today!"
+                android:textColor="@color/black"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/foodTypeSelection"
+                android:layout_width="164dp"
+                android:layout_height="55dp"
+                android:background="@drawable/rounded_corner"
+                android:entries="@array/tags"
+                android:gravity="center"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/check_text">
+
+
+            </androidx.appcompat.widget.AppCompatSpinner>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_random"
         android:layout_width="411dp"
         android:layout_height="460dp"
-        android:layout_marginTop="34dp"
         android:background="#e6e6fa"
         android:foregroundGravity="center"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/check_text">
+        app:layout_constraintTop_toBottomOf="@+id/TopBar">
 
 
     </androidx.recyclerview.widget.RecyclerView>
-
-    <androidx.appcompat.widget.AppCompatSpinner
-        android:id="@+id/foodTypeSelection"
-        android:layout_width="164dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="244dp"
-        android:layout_marginBottom="34dp"
-        android:background="#e6e6fa"
-        android:entries="@array/tags"
-        android:gravity="center"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/recycler_random"
-        app:layout_constraintStart_toStartOf="parent">
-
-
-    </androidx.appcompat.widget.AppCompatSpinner>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
