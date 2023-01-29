@@ -106,7 +106,7 @@
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/imageView1"
             app:layout_constraintTop_toTopOf="parent" />
-        
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
