@@ -15,6 +15,9 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class FirebaseUtils {
     private static FirebaseAuth mAuth =FirebaseAuth.getInstance();
     public static FirebaseDatabase db =FirebaseDatabase.getInstance();
@@ -58,4 +61,50 @@ public class FirebaseUtils {
                     }
                 });
     }
+
+    public static void addPreference(String diet, String allergies, String cuisine, String dish){
+        Map<String,Object> values = new HashMap<>();
+        values.put("diet",diet);
+        values.put("allergies",allergies);
+        values.put("cuisine",cuisine);
+        values.put("food",dish);
+
+        userRef.child(mAuth.getCurrentUser().getUid()).updateChildren(values).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if(task.isSuccessful()){
+                    Log.d("Firebase Utils","Successfully add preferences");
+                }
+                else{
+                    Log.d("Firebase Utils","Unable to add preferences");
+                }
+            }
+        });
+    }
+
+    public static void addDiet(String diet){
+        if(!diet.isEmpty()){
+            userRef.child(mAuth.getCurrentUser().getUid()).child("diet").setValue(diet);
+        }
+    }
+
+    public static void addAllergies(String allergies){
+        if(!allergies.isEmpty()){
+            userRef.child(mAuth.getCurrentUser().getUid()).child("allergies").setValue(allergies);
+        }
+    }
+
+    public static void addCuisine(String cuisine){
+        if(!cuisine.isEmpty()){
+            userRef.child(mAuth.getCurrentUser().getUid()).child("cuisine").setValue(cuisine);
+        }
+    }
+
+    public static void addDish(String dish){
+        if(!(dish ==null)){
+            userRef.child(mAuth.getCurrentUser().getUid()).child("food").setValue(dish);
+        }
+    }
+
+
 }

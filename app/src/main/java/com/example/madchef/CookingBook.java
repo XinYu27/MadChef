@@ -3,6 +3,7 @@ package com.example.madchef;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.MenuItem;
@@ -11,9 +12,17 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -22,6 +31,12 @@ import java.util.ArrayList;
 
 
 public class CookingBook extends AppCompatActivity {
+    DatabaseReference ref= FirebaseDatabase.getInstance().getReference("users");
+    FirebaseAuth fb = FirebaseAuth.getInstance();
+    FirebaseUser firebaseUser = fb.getCurrentUser();
+    private String TDiet,TAllerg,TCuisine,TDish;
+    private TextView TVDispDiet,  TVDispAllerg, TVDispCuisine;
+    private TextView TVDispDish;
 
     ArrayList<String> AllData = new ArrayList<String>();
     BottomNavigationView bottom_navbar;
@@ -32,28 +47,30 @@ public class CookingBook extends AppCompatActivity {
         setContentView(R.layout.activity_cooking_book);
 
         readLog();
-        TextView TVDispDiet = findViewById(R.id.TVDispDiet);
-        final TextView[] TVDispDish = {findViewById(R.id.TVDispDish)};
-        final TextView TVDispAllerg = findViewById(R.id.TVDispAllerg);
-        TextView TVDispCuisine = findViewById(R.id.TVDispCuisine);
+        TVDispDiet = findViewById(R.id.TVDispDiet);
+        TVDispDish = findViewById(R.id.TVDispDish);
+        TVDispAllerg = findViewById(R.id.TVDispAllerg);
+        TVDispCuisine = findViewById(R.id.TVDispCuisine);
 
 
 
 
-        String TDiet = getIntent().getStringExtra("DIET");
-        TVDispDiet.setText(TDiet);
+        TDiet = getIntent().getStringExtra("DIET");
 
-        String TAllerg = getIntent().getStringExtra("ALLERGIES");
-        TVDispAllerg.setText(TAllerg);
+        TAllerg = getIntent().getStringExtra("ALLERGIES");
 
-        String TCuisine = getIntent().getStringExtra("CUISINE");
-        TVDispCuisine.setText(TCuisine);
+        TCuisine = getIntent().getStringExtra("CUISINE");
 
-        String TDish = getIntent().getStringExtra("DISH");
-        TVDispDish[0].setText(TDish);
+        TDish = getIntent().getStringExtra("DISH");
 
-        //String TDish2 = getIntent().getStringExtra("DISH2");
-        //TVDispDish[0].setText(TDish2);
+        if(firebaseUser ==null){
+            Toast.makeText(CookingBook.this,"Something went wrong.",Toast.LENGTH_LONG).show();
+        }
+        else{
+            showUserPreferences(firebaseUser);
+        }
+
+
 
     }
 
@@ -84,5 +101,31 @@ public class CookingBook extends AppCompatActivity {
         startActivity(intent);
     }
 
+    private void showUserPreferences(FirebaseUser firebaseUser){
+        String userID = firebaseUser.getUid();
 
+        DatabaseReference refProf = FirebaseDatabase.getInstance().getReference("users");
+        refProf.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                ReadWriteUserDetails readUserDetails = snapshot.getValue(ReadWriteUserDetails.class);
+                if(readUserDetails!=null){
+                    TDiet=readUserDetails.diet;
+                    TAllerg = readUserDetails.allergies;
+                    TCuisine = readUserDetails.cuisine;
+                    TDish=readUserDetails.food;
+
+                    TVDispDiet.setText(TDiet);
+                    TVDispAllerg.setText(TAllerg);
+                    TVDispCuisine.setText(TCuisine);
+                    TVDispDish.setText(TDish);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
     }

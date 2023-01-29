@@ -107,12 +107,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
             android:backgroundTint="@color/purple"
-            android:text="button_save"
-            android:onClick="OnClickToHome"
+            android:text="Save"
             android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/RGDish" />
+            app:layout_constraintTop_toBottomOf="@+id/RGDish"/>
+
         <RadioGroup
             android:id="@+id/RGDish"
             android:layout_width="wrap_content"
@@ -125,49 +125,42 @@
                 android:id="@+id/RBmaindish"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="OnClickToSave"
                 android:text="Main Dish"
                 tools:ignore="TouchTargetSizeCheck" />
             <RadioButton
                 android:id="@+id/RBsidedish"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="OnClickToSave"
                 android:text="Side Dish"
                 tools:ignore="TouchTargetSizeCheck" />
             <RadioButton
                 android:id="@+id/RBdessert"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="OnClickToSave"
                 android:text="Dessert"
                 tools:ignore="TouchTargetSizeCheck" />
             <RadioButton
                 android:id="@+id/RBappetizer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="OnClickToSave"
                 android:text="Appetizer"
                 tools:ignore="TouchTargetSizeCheck" />
             <RadioButton
                 android:id="@+id/RBsalad"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="OnClickToSave"
                 android:text="Salad"
                 tools:ignore="TouchTargetSizeCheck" />
             <RadioButton
                 android:id="@+id/RBbread"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="OnClickToSave"
                 android:text="Bread"
                 tools:ignore="TouchTargetSizeCheck" />
             <RadioButton
                 android:id="@+id/RBbreakfast"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="OnClickToSave"
                 android:text="Breakfast"
                 tools:ignore="TouchTargetSizeCheck" />
 
@@ -176,113 +169,47 @@
                 android:id="@+id/RBsoup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="OnClickToSave"
                 android:text="Soup"
                 tools:ignore="TouchTargetSizeCheck" />
             <RadioButton
                 android:id="@+id/RBbeverage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="OnClickToSave"
                 android:text="Beverage"
                 tools:ignore="TouchTargetSizeCheck" />
             <RadioButton
                 android:id="@+id/RBsauce"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="OnClickToSave"
                 android:text="Sauce"
                 tools:ignore="TouchTargetSizeCheck" />
             <RadioButton
                 android:id="@+id/RBmarinade"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="OnClickToSave"
                 android:text="Marinade"
                 tools:ignore="TouchTargetSizeCheck" />
             <RadioButton
                 android:id="@+id/RBfingerfood"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="OnClickToSave"
                 android:text="Fingerfood"
                 tools:ignore="TouchTargetSizeCheck" />
             <RadioButton
                 android:id="@+id/RBsnack"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="OnClickToSave"
                 android:text="Snack"
                 tools:ignore="TouchTargetSizeCheck" />
             <RadioButton
                 android:id="@+id/RBdrink"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="OnClickToSave"
                 android:text="Drink"
                 tools:ignore="TouchTargetSizeCheck" />
         </RadioGroup>
 
-        <!--
-        <RadioGroup
-            android:id="@+id/RGDish2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:orientation="vertical"
-            app:layout_constraintStart_toEndOf="@+id/RGDish"
-            app:layout_constraintTop_toTopOf="@+id/RGDish">
-            <RadioButton
-                android:id="@+id/RBsoup"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="OnClickToSave"
-                android:text="Soup"
-                tools:ignore="TouchTargetSizeCheck" />
-            <RadioButton
-                android:id="@+id/RBbeverage"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="OnClickToSave"
-                android:text="Beverage"
-                tools:ignore="TouchTargetSizeCheck" />
-            <RadioButton
-                android:id="@+id/RBsauce"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="OnClickToSave"
-                android:text="Sauce"
-                tools:ignore="TouchTargetSizeCheck" />
-            <RadioButton
-                android:id="@+id/RBmarinade"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="OnClickToSave"
-                android:text="Marinade"
-                tools:ignore="TouchTargetSizeCheck" />
-            <RadioButton
-                android:id="@+id/RBfingerfood"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="OnClickToSave"
-                android:text="Fingerfood"
-                tools:ignore="TouchTargetSizeCheck" />
-            <RadioButton
-                android:id="@+id/RBsnack"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="OnClickToSave"
-                android:text="Snack"
-                tools:ignore="TouchTargetSizeCheck" />
-            <RadioButton
-                android:id="@+id/RBdrink"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="OnClickToSave"
-                android:text="Drink"
-                tools:ignore="TouchTargetSizeCheck" />
 
-        </RadioGroup> -->
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

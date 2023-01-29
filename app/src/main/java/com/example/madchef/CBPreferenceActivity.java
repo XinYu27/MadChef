@@ -5,12 +5,18 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.io.BufferedWriter;
 import java.io.FileOutputStream;
@@ -19,11 +25,15 @@ import java.io.OutputStreamWriter;
 
 public class CBPreferenceActivity extends AppCompatActivity {
 
+    DatabaseReference ref= FirebaseDatabase.getInstance().getReference("users");
+    FirebaseAuth fb = FirebaseAuth.getInstance();
+    FirebaseUser firebaseUser = fb.getCurrentUser();
     protected String StrDiet = " ";
     protected String StrAllergies = " ";
     protected String StrCuisine = " ";
     protected String StrDish = " ";
-    RadioGroup RGDish, RGDish2;
+    RadioGroup RGDish;
+    RadioButton RBDish;
 
     EditText ETDiet, ETAllerg, ETCuisine;
 
@@ -37,90 +47,76 @@ public class CBPreferenceActivity extends AppCompatActivity {
         ETCuisine = findViewById(R.id.ETCuisine);
 
         RGDish = (RadioGroup) findViewById(R.id.RGDish);
-        //RGDish2 = (RadioGroup) findViewById(R.id.RGDish2);
+
 
         Button BtnSave = findViewById(R.id.BtnSave);
+
         BtnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String TDiet = ETDiet.getText().toString();
+                String TAllerg = ETAllerg.getText().toString();
+                String TCuisine = ETCuisine.getText().toString();
+                String TDish = null;
+                int selectedID = RGDish.getCheckedRadioButtonId();
 
-                        /*
-                EditText ETDiet = findViewById(R.id.ETDiet);
-                StrDiet = ETDiet.getText().toString();
-                if(StrDiet.isEmpty())
-                    StrDiet = " - ";
 
-                EditText ETAllerg = findViewById(R.id.ETAllergies);
-                StrAllergies = ETAllerg.getText().toString();
-                if(StrAllergies.isEmpty())
-                    StrAllergies = " - ";
+                if(selectedID!=-1){
+                    RBDish = findViewById(selectedID);
+                    TDish = RBDish.getText().toString();
+                }
 
-                EditText ETCuisine = findViewById(R.id.ETCuisine);
-                StrCuisine = ETCuisine.getText().toString();
-                if(StrCuisine.isEmpty())
-                    StrCuisine = " - ";
+//                FirebaseUtils.addPreference(TDiet,TAllerg,TCuisine,TDish);
+                FirebaseUtils.addDiet(TDiet);
+                FirebaseUtils.addAllergies(TAllerg);
+                FirebaseUtils.addCuisine(TCuisine);
+                FirebaseUtils.addDish(TDish);
+                Intent intent = new Intent(CBPreferenceActivity.this, CookingBook.class);
+                startActivity(intent);
 
-                System.out.println(StrDiet);
-                System.out.println(StrAllergies);
-                System.out.println(StrCuisine);
-                appendLog();
 
-                         */
             }
         });
 
 
     }
 
-    public void appendLog(){
-        try {
-            FileOutputStream fileout = openFileOutput("log.txt", MODE_APPEND);
-            OutputStreamWriter outputWriter = new OutputStreamWriter(fileout);
-            BufferedWriter BuffWriter = new BufferedWriter(outputWriter);
-            BuffWriter.write(StrDiet);
-            BuffWriter.newLine();
-            BuffWriter.write(StrAllergies);
-            BuffWriter.newLine();
-            BuffWriter.write(StrCuisine);
-            BuffWriter.newLine();
-            BuffWriter.newLine();
-            BuffWriter.close();
-
-            Toast.makeText(getBaseContext(), "Saved successfully", Toast.LENGTH_SHORT).show();
-        } catch (Exception e){
-            e.printStackTrace();
+    public void update(View view){
+        if(isDietChanged()||isAllergiesChanged()||isCuisineChanged()){
+            Toast.makeText(this,"Data has been updated",Toast.LENGTH_LONG).show();
+        }
+        else{
+            Toast.makeText(this,"Data unable to update",Toast.LENGTH_LONG).show();
         }
     }
 
-
-
-
-    public void OnClickToSave (View v){
-
-        String TDiet = ETDiet.getText().toString();
-        String TAllerg = ETAllerg.getText().toString();
-        String TCuisine = ETCuisine.getText().toString();
-
-        RadioButton RBDish = findViewById(RGDish.getCheckedRadioButtonId());
-        String TDish = RBDish.getText().toString();
-
-        //RadioButton RBDish2 = findViewById(RGDish2.getCheckedRadioButtonId());
-        //String TDish2 = RBDish2.getText().toString();
-
-        Intent intent = new Intent(CBPreferenceActivity.this, CookingBook.class);
-        intent.putExtra("DIET", TDiet);
-        intent.putExtra("ALLERGIES", TAllerg);
-        intent.putExtra("CUISINE", TCuisine);
-        intent.putExtra("DISH", TDish);
-        //intent.putExtra("DISH2", TDish2);
-        startActivity(intent);
-
+    private boolean isDietChanged(){
+        ref.child(fb.getCurrentUser().getUid()).child("diet").setValue(ETDiet.getText().toString());
+        StrDiet=ETDiet.getText().toString();
+        return true;
     }
 
-    public void OnClickToHome (View v){
-        Intent intent = new Intent(this, CookingBook.class);
-        startActivity(intent);
+    private boolean isAllergiesChanged(){
+        ref.child(fb.getCurrentUser().getUid()).child("allergies").setValue(ETAllerg.getText().toString());
+        StrAllergies=ETAllerg.getText().toString();
+        return true;
     }
+
+    private boolean isCuisineChanged(){
+        ref.child(fb.getCurrentUser().getUid()).child("cuisine").setValue(ETCuisine.getText().toString());
+        StrCuisine=ETCuisine.getText().toString();
+        return true;
+    }
+
+
+
+
+
+
+
+
+
+
 
 
 
