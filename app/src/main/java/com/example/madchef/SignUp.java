@@ -3,6 +3,7 @@ package com.example.madchef;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -40,11 +41,11 @@ public class SignUp extends AppCompatActivity {
         mAuth=FirebaseAuth.getInstance();
 
 
-        if(mAuth.getCurrentUser()!= null ){
-            startActivity(new Intent(SignUp.this,MainActivity.class));
-            finish();
+//        if(mAuth.getCurrentUser()!= null ){
+//            startActivity(new Intent(SignUp.this,MainActivity.class));
+//            finish();
 
-        }
+//        }
 
         logIn.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
@@ -97,8 +98,8 @@ public class SignUp extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if(task.isSuccessful()){
-                                        Toast.makeText(SignUp.this,"Account registered successfully.",Toast.LENGTH_SHORT).show();
-                                        startActivity(new Intent(SignUp.this,MainActivity.class));
+                                        Toast.makeText(SignUp.this,"Account registered successfully. Please Log In Now.",Toast.LENGTH_SHORT).show();
+                                        startActivity(new Intent(SignUp.this, LogIn.class));
 
 
                                     }else{
