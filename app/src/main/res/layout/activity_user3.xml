@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".User3">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textView22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="52dp"
+            android:layout_marginTop="8dp"
+            android:text="Edit"
+            android:textColor="#000000"
+            android:textSize="9sp"
+            app:layout_constraintStart_toEndOf="@+id/textView21"
+            app:layout_constraintTop_toBottomOf="@+id/imageView9" />
+
+        <TextView
+            android:id="@+id/textView21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="8dp"
+            android:text="Korean"
+            android:textColor="#000000"
+            android:textSize="9sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView9" />
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:text="Following"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/textView18"
+            app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:text="Followers"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/textView17"
+            app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="37dp"
+            android:layout_height="15dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="65dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="4"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/textView13"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="37dp"
+            android:layout_height="15dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="65dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="66M"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/textView12"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="51dp"
+            android:src="@drawable/aboutuser2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="37dp"
+            android:layout_height="15dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="67dp"
+            android:layout_marginTop="65dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="200"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/imageView8"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="67dp"
+            android:layout_marginTop="8dp"
+            android:text="Posts"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/imageView8"
+            app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="51dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="7dp"
+            android:src="@drawable/img_4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:text="Jennie Kim"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+
+        <ImageView
+            android:id="@+id/imageView10"
+            android:layout_width="36dp"
+            android:layout_height="37dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/img_5"
+            app:layout_constraintStart_toEndOf="@+id/imageView9"
+            app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="#00FFFFFF"
+            android:padding="15dp"
+            android:src="@drawable/img_2"
+            app:layout_constraintStart_toStartOf="@+id/imageView10"
+            app:layout_constraintTop_toTopOf="@+id/imageView10"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="409dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="40dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView22" />
+
+        <androidx.gridlayout.widget.GridLayout
+            android:id="@+id/gridLayout3"
+            android:layout_width="411dp"
+            android:layout_height="413dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/divider2"
+            app:useDefaultMargins="true">
+
+            <ImageView
+                android:id="@+id/imageView11"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:src="@drawable/img_6"
+                app:layout_column="0"
+                app:layout_row="0" />
+
+            <ImageView
+                android:id="@+id/imageView12"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:src="@drawable/img_7"
+                app:layout_column="1"
+                app:layout_row="0" />
+
+            <ImageView
+                android:id="@+id/imageView13"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:src="@drawable/img_8"
+                app:layout_column="2"
+                app:layout_row="0" />
+
+            <ImageView
+                android:id="@+id/imageView15"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:src="@drawable/img_9"
+                app:layout_column="0"
+                app:layout_row="1" />
+
+            <ImageView
+                android:id="@+id/imageView22"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:src="@drawable/img_10"
+                app:layout_column="1"
+                app:layout_row="1" />
+
+            <ImageView
+                android:id="@+id/imageView30"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:src="@drawable/img_11"
+                app:layout_column="2"
+                app:layout_row="1" />
+
+            <ImageView
+                android:id="@+id/imageView31"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:src="@drawable/img_12"
+                app:layout_column="0"
+                app:layout_row="2" />
+
+            <ImageView
+                android:id="@+id/imageView32"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:src="@drawable/img_13"
+                app:layout_column="1"
+                app:layout_row="2" />
+
+            <ImageView
+                android:id="@+id/imageView33"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:src="@drawable/img_14"
+                app:layout_column="2"
+                app:layout_row="2" />
+
+            <TextView
+                android:id="@+id/textView25"
+                android:layout_width="130dp"
+                android:layout_height="60dp"
+                android:background="@drawable/img_17"
+                android:gravity="bottom"
+                android:text="   Kimchi"
+                android:textColor="#FFFFFFFF"
+                android:textSize="12sp"
+                app:layout_column="0"
+                app:layout_gravity="bottom|fill_horizontal"
+                app:layout_row="0" />
+
+            <TextView
+                android:id="@+id/textView26"
+                android:layout_width="130dp"
+                android:layout_height="60dp"
+                android:background="@drawable/img_18"
+                android:gravity="bottom"
+                android:text="   Tteobokki"
+                android:textColor="#FFFFFFFF"
+                android:textSize="12sp"
+                app:layout_column="1"
+                app:layout_gravity="bottom|fill_horizontal"
+                app:layout_row="0" />
+
+            <TextView
+                android:id="@+id/textView27"
+                android:layout_width="130dp"
+                android:layout_height="60dp"
+                android:background="@drawable/img_19"
+                android:gravity="bottom"
+                android:text="   Jjajangmyeon"
+                android:textColor="#FFFFFFFF"
+                android:textSize="12sp"
+                app:layout_column="2"
+                app:layout_gravity="bottom|fill_horizontal"
+                app:layout_row="0" />
+
+            <TextView
+                android:id="@+id/textView28"
+                android:layout_width="130dp"
+                android:layout_height="60dp"
+                android:background="@drawable/img_20"
+                android:gravity="bottom"
+                android:text="   Naengmyeon"
+                android:textColor="#FFFFFFFF"
+                android:textSize="12sp"
+                app:layout_column="0"
+                app:layout_gravity="bottom|fill_horizontal"
+                app:layout_row="1" />
+
+            <TextView
+                android:id="@+id/textView29"
+                android:layout_width="130dp"
+                android:layout_height="60dp"
+                android:background="@drawable/img_21"
+                android:gravity="bottom"
+                android:text="  Spicy Stir-Fried Squid"
+                android:textColor="#FFFFFFFF"
+                android:textSize="12sp"
+                app:layout_column="1"
+                app:layout_gravity="bottom|fill_horizontal"
+                app:layout_row="1" />
+
+            <TextView
+                android:id="@+id/textView30"
+                android:layout_width="130dp"
+                android:layout_height="60dp"
+                android:background="@drawable/img_22"
+                android:gravity="bottom"
+                android:text="   Ramyeon"
+                android:textColor="#FFFFFFFF"
+                android:textSize="12sp"
+                app:layout_column="2"
+                app:layout_gravity="bottom|fill_horizontal"
+                app:layout_row="1" />
+
+            <TextView
+                android:id="@+id/textView31"
+                android:layout_width="130dp"
+                android:layout_height="60dp"
+                android:background="@drawable/img_23"
+                android:gravity="bottom"
+                android:text="   Mandu"
+                android:textColor="#FFFFFFFF"
+                android:textSize="12sp"
+                app:layout_column="0"
+                app:layout_gravity="bottom|fill_horizontal"
+                app:layout_row="2" />
+
+            <TextView
+                android:id="@+id/textView32"
+                android:layout_width="130dp"
+                android:layout_height="60dp"
+                android:background="@drawable/img_24"
+                android:gravity="bottom"
+                android:text="   Bibimbap"
+                android:textColor="#FFFFFFFF"
+                android:textSize="12sp"
+                app:layout_column="1"
+                app:layout_gravity="bottom|fill_horizontal"
+                app:layout_row="2" />
+
+            <TextView
+                android:id="@+id/textView33"
+                android:layout_width="130dp"
+                android:layout_height="60dp"
+                android:background="@drawable/img_25"
+                android:gravity="bottom"
+                android:text="   Kimbap"
+                android:textColor="#FFFFFFFF"
+                android:textSize="12sp"
+                app:layout_column="2"
+                app:layout_gravity="bottom|fill_horizontal"
+                app:layout_row="2" />
+        </androidx.gridlayout.widget.GridLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
