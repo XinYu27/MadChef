@@ -85,7 +85,7 @@
             app:layout_constraintStart_toEndOf="@+id/imageView1"
             app:layout_constraintTop_toTopOf="parent" />
 
-        //make the numbers visible in the backend code
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -106,8 +106,7 @@
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/imageView1"
             app:layout_constraintTop_toTopOf="parent" />
-
-        //make the numbers visible in the backend code
+        
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
