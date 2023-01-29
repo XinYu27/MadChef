@@ -12,26 +12,32 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minHeight="?attr/actionBarSize"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         android:background="#e6e6fa">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp"
-            >
-
+            android:padding="16dp">
 
             <ImageView
-                android:id="@+id/BtnBook"
+                android:id="@+id/search_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@id/BtnSetting"
+                android:layout_marginEnd="16dp"
+                android:layout_centerVertical="true"
+                android:onClick="OnClickToBook"
+                android:src="@drawable/ic_book"
+                />
+
+            <ImageView
+                android:id="@+id/BtnSetting"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
-                app:itemIconTint="@drawable/selector"
-                android:onClick="OnClickToBook"
-                android:src="@drawable/ic_book" />
+                android:onClick="OnClickToProfileSetting"
+                android:src="@drawable/ic_setting" />
 
         </RelativeLayout>
 

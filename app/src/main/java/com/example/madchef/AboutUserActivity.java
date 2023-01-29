@@ -61,4 +61,8 @@ public class AboutUserActivity extends AppCompatActivity {
         Intent intent = new Intent(this, meal_planning.class);
         startActivity(intent);
     }
+    public void OnClickToProfileSetting (View v){
+        Intent intent = new Intent(this, Profile.class);
+        startActivity(intent);
+    }
 }
