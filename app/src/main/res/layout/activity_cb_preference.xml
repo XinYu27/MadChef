@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CBPreferenceActivity"
+    tools:ignore="SpeakableTextPresentCheck">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_nav_view"
+        app:layout_constraintTop_toBottomOf="@id/TBMainAct"
+        tools:layout_editor_absoluteX="-16dp">
+
+        <TextView
+            android:id="@+id/TVDiet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="25dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="Diet"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/TVCuisine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="Cuisine"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/TVAllergies"
+            app:layout_constraintTop_toBottomOf="@+id/TVAllergies" />
+
+        <TextView
+            android:id="@+id/TVDish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="34dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="Food/Dish"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/TVCuisine"
+            app:layout_constraintTop_toBottomOf="@+id/TVCuisine" />
+
+        <TextView
+            android:id="@+id/TVAllergies"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="Allergies"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/TVDiet"
+            app:layout_constraintTop_toBottomOf="@+id/TVDiet" />
+
+        <EditText
+            android:id="@+id/ETDiet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="15dp"
+            android:hint="Ex: Vegan, Pescatarian, Keto"
+            android:inputType="text"
+            android:minHeight="48dp"
+            app:layout_constraintStart_toEndOf="@+id/TVDiet"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/ETAllergies"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-12dp"
+            android:hint="Ex: Gluten, Dairy, Nuts"
+            android:inputType="text"
+            android:minHeight="48dp"
+            app:layout_constraintStart_toStartOf="@+id/ETDiet"
+            app:layout_constraintTop_toTopOf="@+id/TVAllergies" />
+
+        <EditText
+            android:id="@+id/ETCuisine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-12dp"
+            android:gravity="start|top"
+            android:hint="Ex: Korean, Thai, Mexican"
+            android:inputType="text"
+            android:minHeight="48dp"
+            app:layout_constraintStart_toStartOf="@+id/ETDiet"
+            app:layout_constraintTop_toTopOf="@+id/TVCuisine" />
+
+        <Button
+            android:id="@+id/BtnSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:backgroundTint="@color/purple"
+            android:text="button_save"
+            android:onClick="OnClickToHome"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/RGDish" />
+        <RadioGroup
+            android:id="@+id/RGDish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="@+id/ETCuisine"
+            app:layout_constraintTop_toBottomOf="@+id/ETCuisine">
+            <RadioButton
+                android:id="@+id/RBmaindish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="OnClickToSave"
+                android:text="Main Dish"
+                tools:ignore="TouchTargetSizeCheck" />
+            <RadioButton
+                android:id="@+id/RBsidedish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="OnClickToSave"
+                android:text="Side Dish"
+                tools:ignore="TouchTargetSizeCheck" />
+            <RadioButton
+                android:id="@+id/RBdessert"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="OnClickToSave"
+                android:text="Dessert"
+                tools:ignore="TouchTargetSizeCheck" />
+            <RadioButton
+                android:id="@+id/RBappetizer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="OnClickToSave"
+                android:text="Appetizer"
+                tools:ignore="TouchTargetSizeCheck" />
+            <RadioButton
+                android:id="@+id/RBsalad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="OnClickToSave"
+                android:text="Salad"
+                tools:ignore="TouchTargetSizeCheck" />
+            <RadioButton
+                android:id="@+id/RBbread"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="OnClickToSave"
+                android:text="Bread"
+                tools:ignore="TouchTargetSizeCheck" />
+            <RadioButton
+                android:id="@+id/RBbreakfast"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="OnClickToSave"
+                android:text="Breakfast"
+                tools:ignore="TouchTargetSizeCheck" />
+
+
+            <RadioButton
+                android:id="@+id/RBsoup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="OnClickToSave"
+                android:text="Soup"
+                tools:ignore="TouchTargetSizeCheck" />
+            <RadioButton
+                android:id="@+id/RBbeverage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="OnClickToSave"
+                android:text="Beverage"
+                tools:ignore="TouchTargetSizeCheck" />
+            <RadioButton
+                android:id="@+id/RBsauce"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="OnClickToSave"
+                android:text="Sauce"
+                tools:ignore="TouchTargetSizeCheck" />
+            <RadioButton
+                android:id="@+id/RBmarinade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="OnClickToSave"
+                android:text="Marinade"
+                tools:ignore="TouchTargetSizeCheck" />
+            <RadioButton
+                android:id="@+id/RBfingerfood"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="OnClickToSave"
+                android:text="Fingerfood"
+                tools:ignore="TouchTargetSizeCheck" />
+            <RadioButton
+                android:id="@+id/RBsnack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="OnClickToSave"
+                android:text="Snack"
+                tools:ignore="TouchTargetSizeCheck" />
+            <RadioButton
+                android:id="@+id/RBdrink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="OnClickToSave"
+                android:text="Drink"
+                tools:ignore="TouchTargetSizeCheck" />
+        </RadioGroup>
+
+        <!--
+        <RadioGroup
+            android:id="@+id/RGDish2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:orientation="vertical"
+            app:layout_constraintStart_toEndOf="@+id/RGDish"
+            app:layout_constraintTop_toTopOf="@+id/RGDish">
+            <RadioButton
+                android:id="@+id/RBsoup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="OnClickToSave"
+                android:text="Soup"
+                tools:ignore="TouchTargetSizeCheck" />
+            <RadioButton
+                android:id="@+id/RBbeverage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="OnClickToSave"
+                android:text="Beverage"
+                tools:ignore="TouchTargetSizeCheck" />
+            <RadioButton
+                android:id="@+id/RBsauce"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="OnClickToSave"
+                android:text="Sauce"
+                tools:ignore="TouchTargetSizeCheck" />
+            <RadioButton
+                android:id="@+id/RBmarinade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="OnClickToSave"
+                android:text="Marinade"
+                tools:ignore="TouchTargetSizeCheck" />
+            <RadioButton
+                android:id="@+id/RBfingerfood"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="OnClickToSave"
+                android:text="Fingerfood"
+                tools:ignore="TouchTargetSizeCheck" />
+            <RadioButton
+                android:id="@+id/RBsnack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="OnClickToSave"
+                android:text="Snack"
+                tools:ignore="TouchTargetSizeCheck" />
+            <RadioButton
+                android:id="@+id/RBdrink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="OnClickToSave"
+                android:text="Drink"
+                tools:ignore="TouchTargetSizeCheck" />
+
+        </RadioGroup> -->
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

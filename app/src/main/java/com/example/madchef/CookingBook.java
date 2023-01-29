@@ -3,126 +3,86 @@ package com.example.madchef;
 import android.content.Intent;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
+import androidx.appcompat.app.AppCompatActivity;
 
-import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.ScrollView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.TextView;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 
-public class CookingBook extends Fragment {
+public class CookingBook extends AppCompatActivity {
 
-    @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        /*
-        ScrollView scrollView = view.findViewById(R.id.SVcookingbook);
-        NavController navController = Navigation.findNavController(scrollView);
-        scrollView.setNavController(navController);
-
-         */
-
-        /*
-        Button CB_pref = view.findViewById(R.id.CB_pref);
-        View.OnClickListener OCLpref = new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                Navigation.findNavController(view).navigate(R.id.action_DestCB_to_DestCB_Pref);
-
-            }
-        };
-        CB_pref.setOnClickListener(OCLpref);
-
-        Button CB_fav = view.findViewById(R.id.CB_fav);
-        View.OnClickListener OCLfav = new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                Navigation.findNavController(view).navigate(R.id.action_DestCB_to_DestCB_Fav);
-
-            }
-        };
-        CB_fav.setOnClickListener(OCLfav);
-
-         */
-
-    }
-
-    public CookingBook() {
-        // Required empty public constructor
-    }
-
-
-    public static CookingBook newInstance(String param1, String param2) {
-        CookingBook fragment = new CookingBook();
-        Bundle args = new Bundle();
-        fragment.setArguments(args);
-        return fragment;
-    }
+    ArrayList<String> AllData = new ArrayList<String>();
+    BottomNavigationView bottom_navbar;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_cooking_book);
 
+        readLog();
+        TextView TVDispDiet = findViewById(R.id.TVDispDiet);
+        final TextView[] TVDispDish = {findViewById(R.id.TVDispDish)};
+        final TextView TVDispAllerg = findViewById(R.id.TVDispAllerg);
+        TextView TVDispCuisine = findViewById(R.id.TVDispCuisine);
+
+
+
+
+        String TDiet = getIntent().getStringExtra("DIET");
+        TVDispDiet.setText(TDiet);
+
+        String TAllerg = getIntent().getStringExtra("ALLERGIES");
+        TVDispAllerg.setText(TAllerg);
+
+        String TCuisine = getIntent().getStringExtra("CUISINE");
+        TVDispCuisine.setText(TCuisine);
+
+        String TDish = getIntent().getStringExtra("DISH");
+        TVDispDish[0].setText(TDish);
+
+        //String TDish2 = getIntent().getStringExtra("DISH2");
+        //TVDispDish[0].setText(TDish2);
 
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_cooking_book,container, false);
-        Button CB_pref = (Button)view.findViewById(R.id.CB_pref);
+    public void readLog(){
+        try{
+            FileInputStream fileIn=openFileInput("log.txt");
+            InputStreamReader InputRead = new InputStreamReader(fileIn);
+            BufferedReader BuffReader = new BufferedReader(InputRead);
 
-        CB_pref.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                FragmentTransaction ft = getChildFragmentManager().beginTransaction();
-                ft.replace(R.id.cookingbookfrag, new CB_Preference());
-                ft.commit();
-
+            String readString = BuffReader.readLine();
+            while(readString != null){
+                AllData.add(readString);
+                readString = BuffReader.readLine();
             }
-        });
-
-        Button CB_fav = (Button)view.findViewById(R.id.CB_fav);
-        CB_fav.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                FragmentTransaction ft = getParentFragmentManager().beginTransaction();
-                ft.replace(R.id.cookingbookfrag, new CB_Favourite());
-                ft.commit();
-
-            }
-        });
-        return view;
-    }
-
-    /*
-    @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState){
-
-        Button CB_pref = view.findViewById(R.id.CB_pref);
-        View.OnClickListener OCLpref = new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                //Navigation.findNavController(view).navigate(R.id.action_cookingBook_to_CB_Preference);
-                Navigation.findNavController(requireView()).navigate(R.id.action_cookingBook_to_CB_Preference);
-
-            }
-            };
-            CB_pref.setOnClickListener(OCLpref);
+            InputRead.close();
+        } catch (Exception e){
+            e.printStackTrace();
         }
+    }
 
-     */
+    public void OnClickToPref (View v){
+        Intent intent = new Intent(this, CBPreferenceActivity.class);
+        startActivity(intent);
+    }
+
+    public void OnClickToFav (View v){
+        Intent intent = new Intent(this, CB_Favourite.class);
+        startActivity(intent);
+    }
 
 
     }

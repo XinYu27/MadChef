@@ -35,7 +35,6 @@ public class ProfileSetting extends AppCompatActivity {
         super.onCreate(savedInstance);
         setContentView(R.layout.activity_edit_profile);
 
-//        userRef=db.getReference("users");
 
         ETname = (EditText) findViewById(R.id.editName);
         ETbd = (EditText) findViewById(R.id.editBD);
@@ -56,7 +55,6 @@ public class ProfileSetting extends AppCompatActivity {
         }
 
 
-//        showUserData();
 
         save.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,20 +72,7 @@ public class ProfileSetting extends AppCompatActivity {
         });
     }
     
-//    private void showUserData(){
-//        Intent intent = getIntent();
-//        name=intent.getStringExtra("name");
-//        System.out.println(NAME);
-//        BIRTHDATE=intent.getStringExtra("birthDate");
-//        PHONENUMBER=intent.getStringExtra("phoneNum");
-//        EMAIL=intent.getStringExtra("email");
-//
-//        ETname.setText(NAME);
-//        ETbd.setText(BIRTHDATE);
-//        ETphonenum.setText(PHONENUMBER);
-//        ETemail.setText(EMAIL);
-//
-//    }
+
     public void update (View view){
         if (isNameChanged()||isPasswordChanged()||isBirthdayChanged()||isPhoneNumChanged()||isEmailChanged()){
             Toast.makeText(this,"Data has been updated",Toast.LENGTH_LONG).show();
