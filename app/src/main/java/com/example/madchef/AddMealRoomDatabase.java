@@ -53,8 +53,8 @@ public abstract class AddMealRoomDatabase extends RoomDatabase {
                         dao.deleteAll();
                         // insert a default instance
 
-                        AddMeal note = new AddMeal("Wed, Jan 5th", "android.resource://com.example.addmeal/drawable/img_1", false, "Fried Chicken");
-                        dao.insert(note);
+                        //AddMeal note = new AddMeal("Wed, Jan 5th", "android.resource://com.example.addmeal/drawable/img_1", false, "Fried Chicken");
+                        //dao.insert(note);
                     });
                 }
             };

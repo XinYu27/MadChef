@@ -64,7 +64,6 @@
             android:textStyle="bold"
             app:cardCornerRadius="50dp"/>
 
-        //make the numbers visible in the backend code
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -146,7 +145,7 @@
             android:layout_toRightOf="@id/imageView2"
             android:background="@drawable/img3"/>
         <ImageView
-            android:id="@+id/imageView4"
+            android:id="@+id/image_added"
             android:layout_width="130dp"
             android:layout_height="150dp"
             android:layout_marginRight="10dp"

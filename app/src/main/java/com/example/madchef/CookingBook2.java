@@ -1,17 +1,11 @@
 package com.example.madchef;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.AttributeSet;
 import android.view.MenuItem;
-import android.view.View;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentContainerView;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -49,7 +43,7 @@ public class CookingBook2 extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(),Profile2.class));
                         overridePendingTransition(0,0);
                         return true;
-                    case R.id.MealPlan:
+                    case R.id.Post:
                         startActivity(new Intent(getApplicationContext(),MealPlan3.class));
                         overridePendingTransition(0,0);
                         return true;

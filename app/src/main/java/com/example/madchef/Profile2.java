@@ -43,7 +43,7 @@ public class Profile2 extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(),Profile2.class));
                         overridePendingTransition(0,0);
                         return true;
-                    case R.id.MealPlan:
+                    case R.id.Post:
                         startActivity(new Intent(getApplicationContext(),MealPlan3.class));
                         overridePendingTransition(0,0);
                         return true;
