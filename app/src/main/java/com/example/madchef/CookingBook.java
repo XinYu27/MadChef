@@ -31,7 +31,6 @@ import java.util.ArrayList;
 
 
 public class CookingBook extends AppCompatActivity {
-    DatabaseReference ref= FirebaseDatabase.getInstance().getReference("users");
     FirebaseAuth fb = FirebaseAuth.getInstance();
     FirebaseUser firebaseUser = fb.getCurrentUser();
     private String TDiet,TAllerg,TCuisine,TDish;

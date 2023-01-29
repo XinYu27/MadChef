@@ -28,10 +28,7 @@ public class CBPreferenceActivity extends AppCompatActivity {
     DatabaseReference ref= FirebaseDatabase.getInstance().getReference("users");
     FirebaseAuth fb = FirebaseAuth.getInstance();
     FirebaseUser firebaseUser = fb.getCurrentUser();
-    protected String StrDiet = " ";
-    protected String StrAllergies = " ";
-    protected String StrCuisine = " ";
-    protected String StrDish = " ";
+
     RadioGroup RGDish;
     RadioButton RBDish;
 
@@ -66,7 +63,6 @@ public class CBPreferenceActivity extends AppCompatActivity {
                     TDish = RBDish.getText().toString();
                 }
 
-//                FirebaseUtils.addPreference(TDiet,TAllerg,TCuisine,TDish);
                 FirebaseUtils.addDiet(TDiet);
                 FirebaseUtils.addAllergies(TAllerg);
                 FirebaseUtils.addCuisine(TCuisine);
@@ -80,45 +76,6 @@ public class CBPreferenceActivity extends AppCompatActivity {
 
 
     }
-
-    public void update(View view){
-        if(isDietChanged()||isAllergiesChanged()||isCuisineChanged()){
-            Toast.makeText(this,"Data has been updated",Toast.LENGTH_LONG).show();
-        }
-        else{
-            Toast.makeText(this,"Data unable to update",Toast.LENGTH_LONG).show();
-        }
-    }
-
-    private boolean isDietChanged(){
-        ref.child(fb.getCurrentUser().getUid()).child("diet").setValue(ETDiet.getText().toString());
-        StrDiet=ETDiet.getText().toString();
-        return true;
-    }
-
-    private boolean isAllergiesChanged(){
-        ref.child(fb.getCurrentUser().getUid()).child("allergies").setValue(ETAllerg.getText().toString());
-        StrAllergies=ETAllerg.getText().toString();
-        return true;
-    }
-
-    private boolean isCuisineChanged(){
-        ref.child(fb.getCurrentUser().getUid()).child("cuisine").setValue(ETCuisine.getText().toString());
-        StrCuisine=ETCuisine.getText().toString();
-        return true;
-    }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }
