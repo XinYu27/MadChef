@@ -112,6 +112,16 @@ public class post extends AppCompatActivity {
                 uploadImage();
             }
         });
+        image_added.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setType("image/*");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+
+                startActivityForResult(Intent.createChooser(intent, "select a picture"), YOUR_IMAGE_CODE);
+            }
+        });
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);

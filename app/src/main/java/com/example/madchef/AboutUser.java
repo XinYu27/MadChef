@@ -34,6 +34,8 @@ import java.util.List;
  * create an instance of this fragment.
  */
 public class AboutUser extends Fragment {
+    TextView postcount1;
+    int x=0;
     RecyclerView recyclerView;
     MyPostAdapter myPostAdapter;
     List<PostObject> postObjectList;
@@ -83,7 +85,7 @@ public class AboutUser extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_about_user, container, false);
-        TextView postcount = view.findViewById(R.id.postcount);
+        postcount1 = view.findViewById(R.id.postcount);
         // Inflate the layout for this fragment
         recyclerView = view.findViewById(R.id.recycle);
         recyclerView.setHasFixedSize(true);
@@ -93,7 +95,7 @@ public class AboutUser extends Fragment {
         myPostAdapter = new MyPostAdapter(getContext(),postObjectList);
         recyclerView.setAdapter(myPostAdapter);
         myPosts();
-        //postcount.setText("myPostAdapter.getItemCount()");
+        //postcount1.setText("t");
         //postcount.setText(myPostAdapter.getItemCount());
         return view;
     }
@@ -102,13 +104,16 @@ public class AboutUser extends Fragment {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+
                 postObjectList.clear();
                 for (DataSnapshot snapshot1: snapshot.getChildren()){
                     PostObject postObject = snapshot1.getValue(PostObject.class);
                     if (postObject.getPublisher().equals(FirebaseAuth.getInstance().getCurrentUser().getUid())){
                         postObjectList.add(postObject);
+                        x++;
                     }
                 }
+                postcount1.setText(""+x);
                 Collections.reverse(postObjectList);
                 myPostAdapter.notifyDataSetChanged();
             }
