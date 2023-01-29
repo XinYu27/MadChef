@@ -1,16 +1,21 @@
 package com.example.madchef;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
+
 public class Community extends AppCompatActivity {
+
 
     BottomNavigationView bottom_navbar;
     @Override
@@ -18,11 +23,13 @@ public class Community extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_community);
 
+
         bottom_navbar = findViewById((R.id.bottom_nav_view));
         bottom_navbar.setSelectedItemId((R.id.Community));
         bottom_navbar.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
 
                 switch(item.getItemId()){
                     case R.id.Book:
