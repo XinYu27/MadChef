@@ -128,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
             recyclerView = findViewById(R.id.recycler_random);
             recyclerView.setHasFixedSize(true);
             recyclerView.setLayoutManager(new GridLayoutManager(MainActivity.this,1));
-            randomRecipeAdapter = new RandomRecipeAdapter(MainActivity.this, response.recipes);
+            randomRecipeAdapter = new RandomRecipeAdapter(MainActivity.this, response.recipes, recipeClickListener);
             recyclerView.setAdapter(randomRecipeAdapter);
 
         }
@@ -138,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this,messaage,Toast.LENGTH_SHORT);
         }
     };
-    
+    //aku x import (so nnti ade error kat sini)-just import
     private final RecipeClickListener recipeClickListener = new RecipeClickListener() {
         @Override
         public void onRecipeClicked(String id) {
