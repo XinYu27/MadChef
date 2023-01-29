@@ -45,7 +45,7 @@
         android:textColor="#000000"
         android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/textView18"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+        app:layout_constraintTop_toBottomOf="@+id/postcount" />
 
     <TextView
         android:id="@+id/textView18"
@@ -57,7 +57,7 @@
         android:textColor="#000000"
         android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/textView17"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+        app:layout_constraintTop_toBottomOf="@+id/postcount" />
 
     <TextView
         android:id="@+id/textView16"
@@ -88,7 +88,7 @@
         android:textColor="#000000"
         android:textSize="14sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/textView12"
+        app:layout_constraintStart_toEndOf="@+id/postcount"
         app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
@@ -102,7 +102,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView12"
+            android:id="@+id/postcount"
             android:layout_width="37dp"
             android:layout_height="15dp"
             android:layout_alignParentLeft="true"
@@ -127,7 +127,7 @@
             android:textColor="#000000"
             android:textSize="12sp"
             app:layout_constraintStart_toEndOf="@+id/imageView8"
-            app:layout_constraintTop_toBottomOf="@+id/textView12" />
+            app:layout_constraintTop_toBottomOf="@+id/postcount" />
 
     <ImageView
         android:id="@+id/imageView9"
