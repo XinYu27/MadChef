@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.MenuItem;
 import android.view.View;
@@ -128,8 +129,8 @@ public class CookingBook extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void OnClickToFav (View v){
-        Intent intent = new Intent(this, CB_Favourite.class);
+    public void OnClickToFav(View v) {
+        Intent intent = new Intent(this, CBFavouriteContainer.class);
         startActivity(intent);
     }
 

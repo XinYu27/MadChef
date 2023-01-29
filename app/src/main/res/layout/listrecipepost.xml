@@ -17,7 +17,7 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/RecipePostTitle"
+            android:id="@+id/BtnTitle"
             style="?attr/borderlessButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -34,7 +34,7 @@
             app:iconPadding="10dp" />
 
         <ImageView
-            android:id="@+id/RecipeImage"
+            android:id="@+id/IVposts"
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:layout_margin="8dp"
